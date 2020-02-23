@@ -1,0 +1,15 @@
+{
+  "name": "week-1",
+  "version": "1.0.0",
+  "description": "dit is mijn oefen server voor week 1 dating app",
+  "main": "w1javascript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carlijn",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "skin-tone": "^2.0.0"
+  }
+}
