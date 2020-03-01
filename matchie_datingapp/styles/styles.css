@@ -135,6 +135,104 @@
   border: 1px solid green;
 }
 
+/****************************/
+/****************************/
+/********* INLOGGEN *********/
+/****************************/
+/****************************/
+
+#inloggen img{
+  width: 20em;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+
+#inloggen fieldset{
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  border: none;
+  text-align: left;
+}
+
+#inloggen legend{
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+#inloggen label{
+  font-size: 1.5em;
+  font-weight: normal;
+  display: block;
+}
+
+#inloggen label:first-of-type{
+  margin-top: 0.5em;
+  margin-bottom: 0.3em;
+}
+
+#inloggen label:nth-of-type(2), #aanmelden label:nth-of-type(3){
+  margin-top: 0.2em;
+  margin-bottom: 0.3em;
+}
+
+#inloggen input{
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  font-size: 1.3em;
+  font-weight: normal;
+  border-radius: 10px;
+  border-color: #EB5014;
+  border-width: 1px;
+  padding: 0.5em 0.0em 0.5em 1.8em;
+}
+
+#inloggen button{
+  padding: 1em 2em 1em 2em;
+  border-radius: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.6em;
+  width: 90%;
+  min-width: 15em;
+  font-size: 1.3em;
+  border-color: #EB5014;
+  box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
+  background-color: #EB5014;
+  color: white;
+}
+
+#inloggen button:disabled{
+  background-color: white;
+  border-color: grey;
+  color: grey;
+}
+
+#inloggen p{
+  font-size: 1em;
+  font-weight: 300;
+  color: grey;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  text-align: center;
+}
+
+#inloggen form input:valid{
+  background-image: url(../images/check.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 0.5em;
+  border: 1px solid green;
+}
+
+
 
 /******************************/
 /******************************/
