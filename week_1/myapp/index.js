@@ -1,11 +1,15 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const passport = require('passport');
 const app = express();
 const port = 3000;
 
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.use('/static', express.static(__dirname + '/static'));
+
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/', (req, res) => {
   res.write('<p>Hello World!<p>');
@@ -30,9 +34,14 @@ app.get('/students/:name', function(req, res){
   res.send('My student name is ' +req.params.name);
 })
 
+app.post('/login', function(req, res){
+  console.log(req.body.email,req.body.password);
+  res.send('okayy');
+})
+
 //pug oefening, template engine
 app.get('/index', function(req, res){
-  res.render('index.pug', {title: 'Hey', message: 'Hello there!'});
+  res.render('index.ejs', {title: 'Hey', message: 'Hello there!'});
 })
 
 /*

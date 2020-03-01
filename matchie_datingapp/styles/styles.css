@@ -38,228 +38,64 @@
   opacity: 0;
 }
 
-/****************************/
-/****************************/
-/******** INLOGKEUZE ********/
-/****************************/
-/****************************/
+/***************************/
+/***************************/
+/******** AANMELDEN ********/
+/***************************/
+/***************************/
 
-#inlogkeuze img{
+#aanmelden img{
   width: 20em;
   height: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10em;
+  margin-top: 10%;
 }
 
-#inlogkeuze p{
-  max-width: 25em;
-  font-size: 0.8em;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: 300;
-}
-
-#inlogkeuze p:first-of-type{
-  margin-top: 15em;
-}
-
-#inlogkeuze p:last-of-type{
-  text-align: center;
-  margin-top: 1em;
-}
-
-#inlogkeuze a button{
-  padding: 1em 2em 1em 2em;
-  border-radius: 40px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.6em;
-  width: 90%;
-  min-width: 16em;
-  font-size: 1.3em;
-  border-color: #EB5014;
-  box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
-}
-
-#inlogkeuze a:first-of-type button{
-  background-color: #EB5014;
-  color: white;
-  text-decoration: none;
-}
-
-#inlogkeuze a:last-of-type button{
-  color: #EB5014;
-  background-color: white;
-}
-
-#inlogkeuze a{
-  text-decoration: none;
-}
-
-/****************************************/
-/****************************************/
-/******** TELEFOON NR STAP 1 / 7 ********/
-/****************************************/
-/****************************************/
-
-#telefoonnr nav{
-  display: flex;
-  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
-  padding: 0.5em;
-}
-
-#telefoonnr nav h1{
-  color: grey;
-  font-weight: normal;
-  position: relative;
-  left: 40%;
-  transform: translateX(-60%);
-  top: 0.5em;
-}
-
-#telefoonnr form input{
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-  width: 100%;
-  text-align: center;
-  font-size: 0.8em;
-  border-radius: 10px;
-  border-color: #EB5014;
-  border-width: 1px;
-  padding: 0.5em 0em 0.5em 0em;
-  color: black;
-}
-
-#telefoonnr form input:valid{
-background-color: lightgreen;
-outline-color: green;
-}
-
-#telefoonnr form input:invalid{
-background-color: lightcoral;
-outline-color: red;
-}
-
-#telefoonnr form{
+#aanmelden fieldset{
   width: 85%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30%;
+  margin-top: 5%;
+  border: none;
+  text-align: left;
 }
 
-#telefoonnr label{
-    font-size: 1.8em;
-    font-weight: bold;
-}
-
-#telefoonnr form p{
-  max-width: 30em;
-  font-size: 0.8em;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: 300;
-  color: grey;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
-#telefoonnr form a button{
-  padding: 1em 2em 1em 2em;
-  border-radius: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.6em;
-  width: 90%;
-  min-width: 15em;
-  font-size: 1.3em;
-  border-color: #EB5014;
-  box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
-  background-color: #EB5014;
-  color: white;
-  text-decoration: none;
-}
-
-#telefoonnr form a button:disabled{
-  background-color: white;
-  border-color: grey;
-  color: grey;
-}
-
-/******************************/
-/******************************/
-/******** MOBIELE CODE ********/
-/******************************/
-/******************************/
-
-#mobicode nav{
-  display: flex;
-  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
-  padding: 0.5em;
-}
-
-#mobicode nav h1{
-  color: grey;
-  font-weight: normal;
-  position: relative;
-  left: 40%;
-  transform: translateX(-60%);
-  top: 0.5em;
-}
-
-#mobicode form input{
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-  width: 17%;
-  text-align: center;
-  font-size: 0.8em;
-  border-radius: 10px;
-  border-color: #EB5014;
-  border-width: 1px;
-  padding: 0.5em 0em 0.5em 0em;
-}
-
-#mobicode form input:valid{
-background-color: lightgreen;
-outline-color: green;
-}
-
-#mobicode form input:invalid{
-background-color: lightcoral;
-outline-color: red;
-}
-
-#mobicode .flexcontainer{
-  display: flex;
-  justify-content: space-between;
-}
-
-#mobicode form{
-  width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30%;
-}
-
-#mobicode label{
-  font-size: 1.8em;
+#aanmelden legend{
+  font-size: 2.2em;
   font-weight: bold;
 }
 
-#mobicode form p{
-  max-width: 30em;
-  font-size: 0.8em;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: 300;
-  color: grey;
-  margin-bottom: 1em;
-  margin-top: 1em;
+#aanmelden label{
+  font-size: 1.5em;
+  font-weight: normal;
+  display: block;
 }
 
-#mobicode form a button{
+#aanmelden label:first-of-type{
+  margin-top: 0.5em;
+  margin-bottom: 0.3em;
+}
+
+#aanmelden label:nth-of-type(2), #aanmelden label:nth-of-type(3){
+  margin-top: 0.2em;
+  margin-bottom: 0.3em;
+}
+
+#aanmelden input{
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  font-size: 1.3em;
+  font-weight: normal;
+  border-radius: 10px;
+  border-color: #EB5014;
+  border-width: 1px;
+  padding: 0.5em 0.0em 0.5em 1.8em;
+}
+
+#aanmelden button{
   padding: 1em 2em 1em 2em;
   border-radius: 40px;
   margin-left: auto;
@@ -272,14 +108,33 @@ outline-color: red;
   box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
   background-color: #EB5014;
   color: white;
-  text-decoration: none;
 }
 
-#mobicode form a button:disabled{
+#aanmelden button:disabled{
   background-color: white;
   border-color: grey;
   color: grey;
 }
+
+#aanmelden p{
+  font-size: 1em;
+  font-weight: 300;
+  color: grey;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  text-align: center;
+}
+
+#aanmelden form input:valid{
+  background-image: url(../images/check.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 0.5em;
+  border: 1px solid green;
+}
+
 
 /******************************/
 /******************************/
@@ -306,22 +161,19 @@ outline-color: red;
   margin-top: 1em;
   margin-bottom: 0.5em;
   width: 100%;
-  text-align: center;
   font-size: 0.8em;
   border-radius: 10px;
   border-color: #EB5014;
   border-width: 1px;
-  padding: 0.5em 0em 0.5em 0em;
+  padding: 0.5em 0.0em 0.5em 1.8em;
 }
 
 #voornaam form input:valid{
-background-color: lightgreen;
-outline-color: green;
-}
-
-#voornaam form input:invalid{
-background-color: lightcoral;
-outline-color: red;
+  background-image: url(../images/check.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 0.5em;
+  border: 1px solid green;
 }
 
 #voornaam form{
@@ -393,24 +245,20 @@ outline-color: red;
   margin-top: 1em;
   margin-bottom: 0.5em;
   width: 100%;
-  max-width: 15em;
-  text-align: center;
-  font-size: 0.8em;
+  font-size: 1.3em;
+  font-weight: normal;
   border-radius: 10px;
   border-color: #EB5014;
   border-width: 1px;
-  padding: 0.5em 0em 0.5em 0em;
-  color: black;
+  padding: 0.5em 0.0em 0.5em 1.8em;
 }
 
 #geboortedatum form input:valid{
-background-color: lightgreen;
-outline-color: green;
-}
-
-#geboortedatum form input:invalid{
-background-color: lightcoral;
-outline-color: red;
+  background-image: url(../images/check.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 0.5em;
+  border: 1px solid green;
 }
 
 #geboortedatum form{
@@ -459,17 +307,17 @@ outline-color: red;
 
 /*******************************/
 /*******************************/
-/********* EMAIL ADRES *********/
+/********** PROVINCIE **********/
 /*******************************/
 /*******************************/
 
-#email nav{
+#provincie nav{
   display: flex;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
   padding: 0.5em;
 }
 
-#email nav h1{
+#provincie nav h1{
   color: grey;
   font-weight: normal;
   position: relative;
@@ -478,43 +326,39 @@ outline-color: red;
   top: 0.5em;
 }
 
-#email form input{
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-  width: 100%;
-  max-width: 15em;
-  text-align: center;
-  font-size: 0.8em;
-  border-radius: 10px;
-  border-color: #EB5014;
-  border-width: 1px;
-  padding: 0.5em 0em 0.5em 0em;
-  color: black;
-}
-
-#email form input:valid{
-background-color: lightgreen;
-outline-color: green;
-}
-
-#email form input:invalid{
-background-color: lightcoral;
-outline-color: red;
-}
-
-#email form{
+#provincie form{
   width: 85%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 30%;
 }
 
-#email label{
+#provincie form label{
   font-size: 1.8em;
   font-weight: bold;
 }
 
-#email form p{
+#provincie form select{
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  height: 2.5em;
+  font-size: 1.3em;
+  font-weight: normal;
+  border-radius: 10px;
+  border-color: #EB5014;
+  border-width: 1px;
+}
+
+#provincie form select:valid{
+  background-image: url(../images/check.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 7.3em;
+  border: 1px solid green;
+}
+
+#provincie form p{
   max-width: 30em;
   font-size: 0.8em;
   margin-left: auto;
@@ -525,7 +369,7 @@ outline-color: red;
   margin-top: 1em;
 }
 
-#email form a button{
+#provincie form a button{
   padding: 1em 2em 1em 2em;
   border-radius: 40px;
   margin-left: auto;
@@ -540,7 +384,7 @@ outline-color: red;
   color: white;
 }
 
-#email form a button:disabled{
+#provincie form a button:disabled{
   background-color: white;
   border-color: grey;
   color: grey;
@@ -548,17 +392,17 @@ outline-color: red;
 
 /********************************/
 /********************************/
-/***** MAN / VROUW VOORKEUR *****/
+/********* MAN / VROUW  *********/
 /********************************/
 /********************************/
 
-#manvrouwvoorkeur nav{
+#manvrouw nav{
   display: flex;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
   padding: 0.5em;
 }
 
-#manvrouwvoorkeur nav h1{
+#manvrouw nav h1{
   color: grey;
   font-weight: normal;
   position: relative;
@@ -567,62 +411,40 @@ outline-color: red;
   top: 0.5em;
 }
 
-#manvrouwvoorkeur form{
+#manvrouw fieldset{
   width: 85%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
+  margin-top: 30%;
+  border: none;
 }
 
-#manvrouwvoorkeur label{
+#manvrouw label{
   font-size: 1.8em;
   font-weight: bold;
+  margin-top: -1em;
+  margin-bottom: 0.6em;
 }
 
-#manvrouwvoorkeur form p{
-  max-width: 30em;
-  font-size: 0.8em;
+#manvrouw legend{
+  width: 95%;
+  font-size: 1.8em;
+  font-weight: bold;
   margin-left: auto;
   margin-right: auto;
+}
+
+#manvrouw p{
+  font-size: 0.8em;
   font-weight: 300;
   color: grey;
-  margin-bottom: 1em;
-  margin-top: -1em;
+  margin-top: 3em;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#manvrouwvoorkeur form input{
-  margin-top: 1em;
-  margin-bottom: 2em;
-  width: 45%;
-  text-align: center;
-  font-size: 0.8em;
-  border-radius: 10px;
-  border-color: #EB5014;
-  border-width: 1px;
-  padding: 3em 0em 0.5em 0em;
-  box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
-}
-
-#manvrouwvoorkeur form .man_icon{
-  background-image: url('../images/man_icon.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-position: top;
-}
-
-#manvrouwvoorkeur form .vrouw_icon{
-  background-image: url('../images/vrouw_icon.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-position: top;
-}
-
-#manvrouwvoorkeur .flexcontainerManVrouw{
-  display: flex;
-  justify-content: space-between;
-}
-
-#manvrouwvoorkeur form a button{
+#manvrouw form a button{
   padding: 1em 2em 1em 2em;
   border-radius: 40px;
   margin-left: auto;
@@ -637,10 +459,51 @@ outline-color: red;
   color: white;
 }
 
-#manvrouwvoorkeur form a button:disabled{
+#manvrouw form a button:disabled{
   background-color: white;
   border-color: grey;
   color: grey;
+}
+
+#manvrouw input[type=radio]{
+  padding: 20px;
+  opacity: 0;
+}
+
+#manvrouw legend{
+  margin-bottom: 2em;
+}
+
+#manvrouw label[for=man]{
+  padding: 1em;
+  width: 5em;
+  border: 1px solid black;
+  float: left;
+  border-radius: 10px;
+  border: 2px solid #EB5014;
+  font-weight: normal;
+  margin-top: -1.4em;
+  margin-left: 0.2em;
+}
+
+#manvrouw label:active{
+  background-color: #EB5014;
+  color: white;
+}
+
+#manvrouw label[for=vrouw]{
+  width: 5em;
+  padding: 1em 0.5em 1em 0.5em;
+  border: 1px solid black;
+  float: right;
+  border-radius: 10px;
+  margin-top: -1.45em;
+  border: 2px solid #EB5014;
+  font-weight: normal;
+}
+
+#manvrouw label{
+  text-align: center;
 }
 
 /******************************/
@@ -676,15 +539,15 @@ outline-color: red;
   font-weight: bold;
 }
 
-#fotostoevoegen form p{
-  max-width: 30em;
-  font-size: 0.4em;
-  margin-left: auto;
-  margin-right: auto;
+#fotostoevoegen p{
+  font-size: 0.8em;
   font-weight: 300;
   color: grey;
-  margin-bottom: 2em;
-  margin-top: 2em;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  text-align: left;
 }
 
 #fotostoevoegen form input[type=file]{
@@ -700,6 +563,11 @@ outline-color: red;
 
 #fotostoevoegen form input:first-of-type{
   border: 0.5px solid #EB5014;
+  margin-top: 15%;
+}
+
+#fotostoevoegen form input:nth-of-type(2){
+    margin-top: 15%;
 }
 
 #fotostoevoegen #gridContainerFotos{
@@ -720,11 +588,85 @@ outline-color: red;
   box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
   background-color: #EB5014;
   color: white;
-  position: relative;
-  bottom: 12em;
+  margin-top: 1em;
 }
 
 #fotostoevoegen form a button:disabled{
+  background-color: white;
+  border-color: grey;
+  color: grey;
+}
+
+/*******************************/
+/*******************************/
+/******** TEKST PROFIEL ********/
+/*******************************/
+/*******************************/
+
+#tekst_profiel nav{
+  display: flex;
+  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
+  padding: 0.5em;
+}
+
+#tekst_profiel nav h1{
+  color: grey;
+  font-weight: normal;
+  position: relative;
+  left: 40%;
+  transform: translateX(-60%);
+  top: 0.5em;
+}
+
+#tekst_profiel form{
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30%;
+}
+
+#tekst_profiel form label{
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+#tekst_profiel textarea{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  font-size: 0.8em;
+  height: 5em;
+  padding: 0.2em 0.3em 0em 0.2em;
+}
+
+#tekst_profiel form p{
+  max-width: 30em;
+  font-size: 0.8em;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 300;
+  color: grey;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+#tekst_profiel form a button{
+  padding: 1em 2em 1em 2em;
+  border-radius: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.6em;
+  width: 90%;
+  min-width: 15em;
+  font-size: 1.3em;
+  border-color: #EB5014;
+  box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
+  background-color: #EB5014;
+  color: white;
+}
+
+#tekst_profiel form a button:disabled{
   background-color: white;
   border-color: grey;
   color: grey;
@@ -747,10 +689,9 @@ outline-color: red;
 }
 
 #mijnprofiel img:nth-child(2){
-  overflow: hidden;
-  width: 140%;
-  margin: -65% -70% -50% -40%;
+  width: 100%;
   position: relative;
+  max-height: 50%;
 }
 
 #mijnprofiel nav h1{
@@ -763,7 +704,7 @@ outline-color: red;
 }
 
 #mijnprofiel h2{
-  margin-top: 8em;
+  margin-top: 0.5em;
   margin-left: 0.5em;
 }
 
@@ -793,7 +734,7 @@ outline-color: red;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -1em;
+  margin-top: -0.5em;
   width: 90%;
   min-width: 16em;
   font-size: 1.3em;
