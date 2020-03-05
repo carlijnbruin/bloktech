@@ -50,16 +50,16 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
+  margin-top: 2em;
 }
 
 #aanmelden fieldset{
-  width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5%;
   border: none;
-  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
 
 #aanmelden legend{
@@ -87,6 +87,7 @@
   margin-top: 0em;
   margin-bottom: 0.5em;
   width: 100%;
+  max-width: 18em;
   font-size: 1.3em;
   font-weight: normal;
   border-radius: 10px;
@@ -96,18 +97,23 @@
 }
 
 #aanmelden button{
+  display: block;
   padding: 1em 2em 1em 2em;
   border-radius: 40px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.6em;
-  width: 90%;
+  max-width: 18em;
   min-width: 15em;
   font-size: 1.3em;
   border-color: #EB5014;
   box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
   background-color: #EB5014;
   color: white;
+}
+
+#aanmelden a{
+  text-decoration: none;
 }
 
 #aanmelden button:disabled{
