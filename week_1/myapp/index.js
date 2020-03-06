@@ -2,20 +2,26 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const slug = require('slug');
+const path = require('path');
 const app = express();
 const port = 3000;
 
 let users = [];
 
+// app.use(express.static(path.join(__dirname, 'static')));
+app.use('/static', express.static(__dirname + '/static'));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
-app.use('/static', express.static(__dirname + '/static'));
 app.use(bodyParser.urlencoded({extended: true}))
 
 
+/***********************/
+/********* GET *********/
+/***********************/
+
 
 app.get('/', function(req, res){
-  res.redirect('/aanmelden')
+  res.redirect('/aanmelden');
 })
 
 //GET to request data from a document
@@ -25,7 +31,7 @@ app.get('/aanmelden', function(req, res){
 
 //GET, to request data from a document
 app.get('/voornaam/:id', function(req, res){
-  const id = req.params.id; // ? var id opslaan
+  const id = req.params.id; // var id opslaan
   const user = users.filter(user => user.id === id)[0];
   res.render('voornaam.ejs', user); // twee parameters toegeven. de pagina en de juiste user die is gekozen.
 })
@@ -52,13 +58,6 @@ app.get('/geslacht/:id', function(req, res){
 })
 
 //GET, to request data from a document
-app.get('/voornaam/:id', function(req, res){
-  const id = req.params.id; //var id opslaan
-  const user = users.filter(user => user.id === id)[0] // kijken of id overeenkomt met de id hierboven.
-  res.render('voornaam.ejs', user);
-})
-
-//GET, to request data from a document
 app.get('/afbeeldingen/:id', function(req, res){
   const id = req.params.id; //var id opslaan
   const user = users.filter(user => user.id === id)[0] // kijken of id overeenkomt met de id hierboven.
@@ -80,7 +79,9 @@ app.get('/profiel/:id', function(req, res){
 })
 
 
-
+/************************/
+/********* POST *********/
+/************************/
 
 
 //POST, to send data from a document
