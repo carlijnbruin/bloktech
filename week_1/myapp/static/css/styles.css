@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+body{
+background-image: url("/static/img/couple.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+}
+
 /*****************************/
 /*****************************/
 /******** BEGINSCHERM ********/
@@ -44,13 +50,14 @@
 /***************************/
 /***************************/
 
-#aanmelden img{
+#aanmelden .logo{
   width: 20em;
   height: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 3em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 #aanmelden fieldset{
@@ -60,10 +67,15 @@
 }
 
 #aanmelden form{
-  width: 20em;
+  width: 25em;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 0em 2em 4em 2em;
+  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
 
 #aanmelden a{
@@ -73,6 +85,9 @@
 #aanmelden legend{
   font-size: 2.2em;
   font-weight: bold;
+  margin-bottom: 1em;
+  text-align: center;
+  padding-top: 0.5em;
 }
 
 #aanmelden label{
@@ -82,7 +97,6 @@
 }
 
 #aanmelden label:first-of-type{
-  margin-top: 0.5em;
   margin-bottom: 0.3em;
 }
 
@@ -101,7 +115,7 @@
   border-radius: 10px;
   border-color: #EB5014;
   border-width: 1px;
-  padding: 0.5em 0.0em 0.5em 1.8em;
+  padding: 0.5em 0.0em 0.5em 0.5em;
 }
 
 #aanmelden button{
@@ -132,19 +146,31 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  margin-top: 2em;
+  position: relative;
+  top: -3em;
 }
 
 #aanmelden form input:valid{
-  background-image: url(../images/check.png);
+  background-image: url(/static/img/check.png);
   background-repeat: no-repeat;
   background-size: 20px;
-  background-position: 0.5em;
+  background-position: 14em;
   border: 1px solid green;
 }
 
 #aanmelden p a{
   text-decoration: underline;
+}
+
+@media (min-width: 50em) {
+
+  #aanmelden p{
+    margin-left: 6.5em;
+  }
+
+  #aanmelden .logo{
+    margin-left: 6em;
+  }
 }
 
 /****************************/
@@ -169,6 +195,7 @@
   margin-top: 5%;
   border: none;
   text-align: left;
+  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
 
 #inloggen legend{
@@ -229,7 +256,6 @@
   font-size: 1em;
   font-weight: 300;
   color: grey;
-  width: 85%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5%;
@@ -237,7 +263,7 @@
 }
 
 #inloggen form input:valid{
-  background-image: url(../images/check.png);
+  background-image: url(/static/img/check.png);
   background-repeat: no-repeat;
   background-size: 20px;
   background-position: 0.5em;
@@ -256,6 +282,11 @@
   display: flex;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
   padding: 0.5em;
+  background-color: white;
+}
+
+#voornaam .logo{
+  display: none;
 }
 
 #voornaam nav h1{
@@ -275,22 +306,29 @@
   border-radius: 10px;
   border-color: #EB5014;
   border-width: 1px;
-  padding: 0.5em 0.0em 0.5em 1.8em;
+  padding: 0.5em 0.0em 0.5em 0.5em;
 }
 
 #voornaam form input:valid{
-  background-image: url(../images/check.png);
+  background-image: url(/static/img/check.png);
   background-repeat: no-repeat;
   background-size: 20px;
-  background-position: 0.5em;
+  background-position: 13em;
   border: 1px solid green;
 }
 
 #voornaam form{
-  width: 85%;
+  width: 25em;
+  text-align: left;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30%;
+  background-color: white;
+  margin-top: 1em;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 4em 2em 16.3em 2em;
+  margin-bottom: 1.5em;
+  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
 
 #voornaam label{
@@ -309,14 +347,13 @@
   margin-top: 1em;
 }
 
-#voornaam form a button{
+#voornaam form button{
+  display: block;
   padding: 1em 2em 1em 2em;
   border-radius: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.6em;
-  width: 90%;
-  min-width: 15em;
+  margin-top: 1em;
+  max-width: 18em;
+  width: 100%;
   font-size: 1.3em;
   border-color: #EB5014;
   box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
@@ -324,10 +361,56 @@
   color: white;
 }
 
-#voornaam form a button:disabled{
+#voornaam form button:disabled{
   background-color: white;
   border-color: grey;
   color: grey;
+}
+
+@media (min-width: 50em) {
+
+  a img{
+    position: relative;
+    top: 6em;
+    left: 3em;
+  }
+  .stappen{
+    box-shadow: none;
+    left: 8em !important;
+    top: 4.5em !important;
+    color: lightgrey !important;
+  }
+  header nav{
+    box-shadow: -1px 1px 14px rgba(0,0,0,0) !important;
+    background-color: transparent !important;
+  }
+
+  form{
+    width: 25em !important;
+    border: 1px solid grey;
+    border-radius: 20px;
+    border-color: lightgrey;
+    background-color: white;
+    margin-left: 3em !important;
+    margin-top: 1em !important;
+  }
+
+  #voornaam .logo{
+    display: inherit;
+    width: 20em;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: -4.3em;
+    margin-left: 6em;
+  }
+
+  #voornaam form, #fotostoevoegen form, #geboortedatum form, #manvrouw form, #mijnprofiel form, #provincie form, #tekst_profiel form{
+    padding: 7em 2em 12.85em 2em !important;
+    margin-bottom: 1.2em;
+  }
 }
 
 /*******************************/
@@ -340,6 +423,11 @@
   display: flex;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
   padding: 0.5em;
+  background-color: white;
+}
+
+#geboortedatum .logo{
+  display: none;
 }
 
 #geboortedatum nav h1{
@@ -360,22 +448,29 @@
   border-radius: 10px;
   border-color: #EB5014;
   border-width: 1px;
-  padding: 0.5em 0.0em 0.5em 1.8em;
+  padding: 0.5em 0.0em 0.5em 0.5em;
 }
 
 #geboortedatum form input:valid{
-  background-image: url(../images/check.png);
+  background-image: url(/static/img/check.png);
   background-repeat: no-repeat;
   background-size: 20px;
-  background-position: 0.5em;
+  background-position: 7em;
   border: 1px solid green;
 }
 
 #geboortedatum form{
-  width: 85%;
+  width: 25em;
+  text-align: left;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30%;
+  background-color: white;
+  margin-top: 1em;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 4em 2em 17.5em 2em;
+  margin-bottom: 1.5em;
+  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
 
 #geboortedatum label{
@@ -394,14 +489,13 @@
   margin-top: 1em;
 }
 
-#geboortedatum form a button{
+#geboortedatum form button{
+  display: block;
   padding: 1em 2em 1em 2em;
   border-radius: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.6em;
-  width: 90%;
-  min-width: 15em;
+  margin-top: 1em;
+  max-width: 18em;
+  width: 100%;
   font-size: 1.3em;
   border-color: #EB5014;
   box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
@@ -409,10 +503,28 @@
   color: white;
 }
 
-#geboortedatum form a button:disabled{
+#geboortedatum form button:disabled{
   background-color: white;
   border-color: grey;
   color: grey;
+}
+
+@media (min-width: 50em) {
+  #geboortedatum form{
+    padding: 7em 2em 14em 2em !important;
+    margin-bottom: 1.2em;
+  }
+  #geboortedatum .logo{
+    display: inherit;
+    width: 20em;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: -4.3em;
+    margin-left: 6em;
+  }
 }
 
 /*******************************/
@@ -425,6 +537,11 @@
   display: flex;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
   padding: 0.5em;
+  background-color: white;
+}
+
+#provincie .logo{
+  display: none;
 }
 
 #provincie nav h1{
@@ -437,10 +554,17 @@
 }
 
 #provincie form{
-  width: 85%;
+  width: 25em;
+  text-align: left;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30%;
+  background-color: white;
+  margin-top: 1em;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 4em 2em 16.6em 2em;
+  margin-bottom: 1.5em;
+  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
 
 #provincie form label{
@@ -479,14 +603,13 @@
   margin-top: 1em;
 }
 
-#provincie form a button{
+#provincie form button{
+  display: block;
   padding: 1em 2em 1em 2em;
   border-radius: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.6em;
-  width: 90%;
-  min-width: 15em;
+  margin-top: 1em;
+  max-width: 18em;
+  width: 100%;
   font-size: 1.3em;
   border-color: #EB5014;
   box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
@@ -494,10 +617,24 @@
   color: white;
 }
 
-#provincie form a button:disabled{
+#provincie form button:disabled{
   background-color: white;
   border-color: grey;
   color: grey;
+}
+
+@media (min-width: 50em) {
+  #provincie .logo{
+    display: inherit;
+    width: 20em;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: -4.3em;
+    margin-left: 6em;
+  }
 }
 
 /********************************/
@@ -510,6 +647,11 @@
   display: flex;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
   padding: 0.5em;
+  background-color: white;
+}
+
+#manvrouw .logo{
+  display: none;
 }
 
 #manvrouw nav h1{
@@ -521,11 +663,21 @@
   top: 0.5em;
 }
 
-#manvrouw fieldset{
-  width: 85%;
+#manvrouw form{
+  width: 25em;
+  text-align: left;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30%;
+  background-color: white;
+  margin-top: 1em;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 0em 2em 15.5em 2em;
+  margin-bottom: 1.5em;
+  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
+}
+
+#manvrouw form fieldset{
   border: none;
 }
 
@@ -537,31 +689,29 @@
 }
 
 #manvrouw legend{
-  width: 95%;
+  display: block;
   font-size: 1.8em;
   font-weight: bold;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
+  padding: 2.2em 0em 0.5em 0em;
 }
 
-#manvrouw p{
+#manvrouw form fieldset p{
+  display: block;
   font-size: 0.8em;
   font-weight: 300;
   color: grey;
   margin-top: 3em;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
 }
 
-#manvrouw form a button{
+#manvrouw form button{
+  display: block;
   padding: 1em 2em 1em 2em;
   border-radius: 40px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 1em;
-  width: 90%;
-  min-width: 15em;
+  max-width: 18em;
+  width: 100%;
   font-size: 1.3em;
   border-color: #EB5014;
   box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
@@ -569,7 +719,7 @@
   color: white;
 }
 
-#manvrouw form a button:disabled{
+#manvrouw form button:disabled{
   background-color: white;
   border-color: grey;
   color: grey;
@@ -592,7 +742,7 @@
   border-radius: 10px;
   border: 2px solid #EB5014;
   font-weight: normal;
-  margin-top: -1.4em;
+  margin-top: -1.9em;
   margin-left: 0.2em;
 }
 
@@ -607,13 +757,31 @@
   border: 1px solid black;
   float: right;
   border-radius: 10px;
-  margin-top: -1.45em;
+  margin-top: -1.9em;
   border: 2px solid #EB5014;
   font-weight: normal;
 }
 
 #manvrouw label{
   text-align: center;
+}
+
+@media (min-width: 50em) {
+  #manvrouw .logo{
+    display: inherit;
+    width: 20em;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: -4.3em;
+    margin-left: 6em;
+  }
+  #manvrouw form{
+    padding: 2.3em 2em 12.5em 2em !important;
+    margin-bottom: 1.45em;
+  }
 }
 
 /******************************/
@@ -626,6 +794,11 @@
   display: flex;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
   padding: 0.5em;
+  background-color: white;
+}
+
+#fotostoevoegen .logo{
+  display: none;
 }
 
 #fotostoevoegen nav h1{
@@ -638,10 +811,17 @@
 }
 
 #fotostoevoegen form{
-  width: 85%;
+  width: 25em;
+  text-align: left;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
+  background-color: white;
+  margin-top: 1em;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 1.5em 2em 3.55em 2em;
+  margin-bottom: 1.5em;
+  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
 
 #fotostoevoegen form label{
@@ -665,46 +845,63 @@
   border-radius: 10px;
   border-color: #EB5014;
   border-width: 1px;
-  padding: 7em 2em 7em 2em;
+  padding: 11em 2em 11em 2em;
   margin-bottom: 10px;
   box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
   color: transparent;
 }
 
-#fotostoevoegen form input:first-of-type{
+#fotostoevoegen form input{
   border: 0.5px solid #EB5014;
-  margin-top: 15%;
+  margin-top: 2em;
 }
 
-#fotostoevoegen form input:nth-of-type(2){
-    margin-top: 15%;
+#fotostoevoegen img{
+  max-width: 100%;
+  max-height: 15em;
 }
 
-#fotostoevoegen #gridContainerFotos{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-}
-
-#fotostoevoegen form a button{
+#fotostoevoegen form button{
+  display: block;
   padding: 1em 2em 1em 2em;
   border-radius: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  min-width: 15em;
+  margin-top: 1em;
+  max-width: 18em;
+  width: 100%;
   font-size: 1.3em;
   border-color: #EB5014;
   box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
   background-color: #EB5014;
   color: white;
-  margin-top: 1em;
 }
 
-#fotostoevoegen form a button:disabled{
+#fotostoevoegen form button:disabled{
   background-color: white;
   border-color: grey;
   color: grey;
+}
+
+@media (min-width: 50em) {
+  #fotostoevoegen .logo{
+    display: inherit;
+    width: 20em;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: -4.3em;
+    margin-left: 6em;
+  }
+
+  #fotostoevoegen form{
+    padding: 4.4em 2em 0.5em 2em !important;
+    margin-bottom: 0.9em;
+  }
+
+  #fotostoevoegen form label{
+    margin-top: -1em;
+  }
 }
 
 /*******************************/
@@ -717,6 +914,11 @@
   display: flex;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
   padding: 0.5em;
+  background-color: white;
+}
+
+#tekst_profiel .logo{
+  display: none;
 }
 
 #tekst_profiel nav h1{
@@ -729,10 +931,17 @@
 }
 
 #tekst_profiel form{
-  width: 85%;
+  width: 25em;
+  text-align: left;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30%;
+  background-color: white;
+  margin-top: 1em;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 4em 2em 11.65em 2em;
+  margin-bottom: 1.5em;
+  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
 
 #tekst_profiel form label{
@@ -761,14 +970,13 @@
   margin-top: 1em;
 }
 
-#tekst_profiel form a button{
+#tekst_profiel form button{
+  display: block;
   padding: 1em 2em 1em 2em;
   border-radius: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.6em;
-  width: 90%;
-  min-width: 15em;
+  margin-top: 1em;
+  max-width: 18em;
+  width: 100%;
   font-size: 1.3em;
   border-color: #EB5014;
   box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
@@ -776,10 +984,28 @@
   color: white;
 }
 
-#tekst_profiel form a button:disabled{
+#tekst_profiel form button:disabled{
   background-color: white;
   border-color: grey;
   color: grey;
+}
+
+@media (min-width: 50em) {
+  #tekst_profiel .logo{
+    display: inherit;
+    width: 20em;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: -4.3em;
+    margin-left: 6em;
+  }
+  #tekst_profiel form{
+    padding: 7em 2em 7.4em 2em !important;
+    margin-bottom: 2em;
+  }
 }
 
 /******************************/
@@ -789,19 +1015,39 @@
 /******************************/
 
 #mijnprofiel nav{
-  z-index: 1;
   display: flex;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
   padding: 0.5em;
   background-color: white;
-  position: fixed;
-  width: 100%;
 }
 
-#mijnprofiel img:nth-child(2){
-  width: 100%;
-  position: relative;
-  max-height: 50%;
+#mijnprofiel .logo{
+  display: none;
+}
+
+#mijnprofiel #profielfoto{
+  width: 20em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 5px;
+}
+
+#mijnprofiel .profielBackground{
+  background-color: white;
+  width: 25em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid white;
+  border-radius: 20px;
+  margin-top: 1em;
+  margin-bottom: 1.6em;
+  display: block;
+  padding: 1em 0em 4em 0em;
+  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
 
 #mijnprofiel nav h1{
@@ -815,45 +1061,74 @@
 
 #mijnprofiel h2{
   margin-top: 0.5em;
-  margin-left: 0.5em;
+  margin-left: 1.5em;
 }
 
 #mijnprofiel h2 span{
-  font-weight: normal;
+  font-weight: 100;
 }
 
-#mijnprofiel .location img{
+#mijnprofiel .profielBackground img:first-of-type{
   height: 2em;
   width: -2em;
-  margin: 0.5em 0em 1.5em 0.5em;
+  margin: 0.5em 0em -0.5em 0.5em;
+  padding-left: 1.5em;
 }
 
-#mijnprofiel .location p{
+#mijnprofiel .profielBackground p:first-of-type{
   font-size: 0.9em;
-  margin-top: 1em;
+  margin-top: -2em;
   color: grey;
+  display: inline-block;
 }
 
-#mijnprofiel .location{
-  display: flex;
+#mijnprofiel .profielBackground p:last-of-type{
+  margin-left: 2em;
+  margin-right: 2em;
 }
 
-#mijnprofiel a button{
+#mijnprofiel button{
+  display: block;
   padding: 1em 2em 1em 2em;
   border-radius: 40px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -0.5em;
-  width: 90%;
-  min-width: 16em;
+  margin-top: 1em;
+  max-width: 18em;
+  width: 100%;
   font-size: 1.3em;
   border-color: #EB5014;
   box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
   background-color: #EB5014;
   color: white;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#mijnprofiel a{
-  text-decoration: none;
+@media (min-width: 50em) {
+  #mijnprofiel .logo{
+    display: inherit;
+    width: 20em;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: -4.3em;
+    margin-left: 6em;
+  }
+
+  #mijnprofiel .mijnProfielNaarLinks{
+    width: 25em !important;
+    margin-left: 3em !important;
+    margin-top: 1em !important;
+    padding-bottom: 0em !important;
+  }
+  #mijnprofiel h2{
+    margin-top: 2.5em;
+    margin-left: 1.5em;
+  }
+
+  #mijnprofiel .profielBackground{
+    margin-bottom: 1.2em;
+    padding-bottom: 0.5em;
+  }
 }

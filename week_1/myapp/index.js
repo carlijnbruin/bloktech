@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const slug = require('slug');
 const path = require('path');
+const multer = require('multer');
+const upload = multer({dest: 'static/upload/' })
 const app = express();
 const port = 3000;
 
@@ -185,7 +187,7 @@ function addGender(req, res){ //request, response
 
 
 //POST, to send data from a document
-app.post('/afbeeldingen', addPictures)
+app.post('/afbeeldingen', upload.single('pictures'), addPictures)
 
 
 //Functie die ingevulde  data terug gaat sturen naar de server en in de array 'user' stopt. (komt niet bij de andere data??? vraag!)

@@ -3,22 +3,23 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <link href="static/css/styles.css" rel="stylesheet" type='text/css'</link>
+    <link href="/static/css/styles.css" rel="stylesheet" type='text/css'</link>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <title>Matchie</title>
 </head>
 
 <body id="voornaam">
+    <img src="/static/img/logo-datingssite.png" class="logo" alt="Matchie logo">
 
   <header>
     <nav>
-      <a href="aanmelden.html"><img src="static/img/nav_pijltje.png" alt="navigatie naar vorige pagina"></a>
-      <h1>Stap 2 / 7</h1>
+      <a href="/aanmelden"><img src="/static/img/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
+      <h1 class="stappen">Stap 2 / 7</h1>
     </nav>
   </header>
 
   <form class="" action="/voornaam" method="post">
-    <label>Mijn voornaam is:
+    <label> Wat is je voornaam?
       <input type="text" name="firstName" value="" required></input>
       <input type="hidden" name="id" value="<%= id %>" />
 

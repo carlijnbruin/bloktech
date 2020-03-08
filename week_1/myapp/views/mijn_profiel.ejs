@@ -3,30 +3,35 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <link href="static/css/styles.css" rel="stylesheet" type='text/css'</link>
+    <link href="/static/css/styles.css" rel="stylesheet" type='text/css'</link>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <title>Matchie</title>
 </head>
 
 <body id="mijnprofiel">
+    <img src="/static/img/logo-datingssite.png" class="logo" alt="Matchie logo">
 
   <header>
     <nav>
-      <a href="tekst_profiel.html"><img src="static/img/nav_pijltje.png" alt="navigatie naar vorige pagina"></a>
-      <h1>Mijn profiel</h1>
+      <a href="/tekst_profiel"><img src="/static/img/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
+      <h1 class="stappen">Mijn profiel</h1>
     </nav>
   </header>
 
-  <img src="static/mijn_profiel_foto.jpeg" alt="mijn profiel foto">
+<div class="mijnProfielNaarLinks">
+  <div class="profielBackground">
+    <h2> <%= firstName %>, <span>24</span></h2>
+    <img src="/static/img/location_icon.png" alt="locatie icoon">
 
-  <h2> Carlijn <span>24</span></h2>
-
-  <div class="location">
-    <img src="images/location_icon.png" alt="locatie icoon">
     <p>Minder dan een kilometer uit de buurt</p>
+    <img src="/static/img/mijn_profiel_foto.jpg" id="profielfoto" alt="mijn profiel foto">
+
+    <div class="location"></div>
+
+    <p> <%= textProfile %> </p>
+
+    <button name="button">Door naar de singles!</button>
   </div>
-
-  <button name="button">Door naar de singles!</button>
-
+</div>
   <script src="javascript/matchie.js"type="text/javascript"></script>
 </body>

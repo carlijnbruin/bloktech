@@ -3,32 +3,28 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <link href="static/css/styles.css" rel="stylesheet" type='text/css'</link>
+    <link href="/static/css/styles.css" rel="stylesheet" type='text/css'</link>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <title>Matchie</title>
 </head>
 
 <body id="fotostoevoegen">
+  <img src="/static/img/logo-datingssite.png" class="logo" alt="Matchie logo">
 
   <header>
     <nav>
-      <a href="man_vrouw.html"><img src="static/img/nav_pijltje.png" alt="navigatie naar vorige pagina"></a>
-      <h1>Stap 6 / 7</h1>
+      <a href="/man_vrouw"><img src="/static/img/nav_pijltje.png" alt="navigatie naar vorige pagina"></a>
+      <h1 class="stappen">Stap 6 / 7</h1>
     </nav>
   </header>
 
-  <form class="" action="/afbeeldingen" method="post">
-    <label>Voeg de mooiste foto’s van jezelf toe!
-      <div id="gridContainerFotos">
+  <form class="" action="/afbeeldingen" method="post" enctype="multipart/form-data">
+    <label>Voeg de mooiste foto van jezelf toe!
         <input class="bestandFoto" type="file" accept="image/*" name="pictures">
-        <input type="file" accept="image/*" name="pictures">
-        <input type="file" accept="image/*" name="pictures">
-        <input type="file" accept="image/*" name="pictures">
         <input type="hidden" name="id" value="<%= id %>" />
-      </div>
     </label>
 
-    <p>Wist u dat een profiel met min. 3 foto’s 5 keer zoveel kans op een match heeft?</p>
+    <p>Wist u dat een profiel met een foto veel meer kans op een match heeft?</p>
 
     <button name="button">Doorgaan</button>
 
