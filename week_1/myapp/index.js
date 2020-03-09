@@ -4,11 +4,29 @@ const passport = require('passport');
 const slug = require('slug');
 const path = require('path');
 const multer = require('multer');
-const upload = multer({dest: 'static/upload/' })
+const upload = multer({dest: 'static/upload/' });
+const mongo = require('mongodb');
+require('dotenv').config();
 const app = express();
 const port = 3000;
 
 let users = [];
+
+let db;
+const MongoClient = mongo.MongoClient;
+const uri = "mongodb+srv://" + process.env.DB_USERNAME + ":" + process.env.DB_PASSWORD + "@clustermatchie-dvmte.azure.mongodb.net/test?retryWrites=true&w=majority";
+
+MongoClient.connect(uri, function (err, client){
+  if (err) {
+    throw err;
+  }
+  db = client.db(process.env.DB_NAME)
+  db.collection('user').insertOne({
+    title: "hello world"
+  })
+})
+
+
 
 // app.use(express.static(path.join(__dirname, 'static')));
 app.use('/static', express.static(__dirname + '/static'));
@@ -195,7 +213,8 @@ function addPictures(req, res){ //request, response
 
   const user = users.filter(user => user.id === req.body.id)[0] // kijken of id overeenkomt met de id hierboven.
 
-  user.pictures = req.body.pictures;
+  user.profilePic = req.file;
+  //user.pictures = req.body.pictures;
 
   console.log(req.body); //Laat in de terminal de ingevulde gegevens zien.
   res.redirect('tekst/' + req.body.id); //Geeft bestand 'tekst_profiel.ejs' weer bij client. Dit is de route!! Niet ejs bestand.
