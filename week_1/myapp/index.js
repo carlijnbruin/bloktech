@@ -7,6 +7,7 @@ const multer = require('multer');
 const upload = multer({dest: 'static/upload/' });
 const mongo = require('mongodb');
 require('dotenv').config();
+const session = require('express-session');
 const app = express();
 const port = 3000;
 
@@ -21,9 +22,9 @@ MongoClient.connect(uri, function (err, client){
     throw err;
   }
   db = client.db(process.env.DB_NAME)
-  db.collection('user').insertOne({
-    title: "hello world"
-  })
+  // db.collection('user').insertOne({
+  //   title: "hello world"
+  // })
 })
 
 
@@ -236,10 +237,12 @@ function addText(req, res){ //request, response
   user.textProfile = req.body.textProfile;
 
   console.log(user);
+
+  db.collection('user').insertOne(user); //Alle info van die specifieke id/user naar database sturen. Heb de website van MongoDB hiervoor geraadpleegd.
+
   console.log(req.body); //Laat in de terminal de ingevulde gegevens zien.
   res.redirect('profiel/' + req.body.id); //Geeft bestand 'mijn_profiel.ejs' weer bij client. Dit is de route!! Niet ejs bestand.
 }
-
 
 
 
