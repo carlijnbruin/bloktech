@@ -133,9 +133,11 @@ background-size: cover;
 }
 
 #aanmelden button:disabled{
-  background-color: white;
+  background-color: lightgrey;
   border-color: grey;
   color: grey;
+  box-shadow: -1px 6px 14px rgba(0,0,0,0);
+  opacity: 0.4;
 }
 
 #aanmelden p.vanAanmeldenTotInloggen{
