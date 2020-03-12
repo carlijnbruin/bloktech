@@ -144,11 +144,9 @@ background-size: cover;
   font-size: 1em;
   font-weight: 300;
   color: grey;
-  max-width: 18em;
-  margin-right: 0em;
   text-align: center;
   position: relative;
-  margin-top: -2em;
+  top: -2em;
 }
 
 #aanmelden form p{
@@ -178,6 +176,11 @@ background-size: cover;
 
   #aanmelden .logo{
     margin-left: 6em;
+  }
+
+  #aanmelden p.vanAanmeldenTotInloggen{
+    max-width: 18em;
+    margin-right: 0em;
   }
 }
 

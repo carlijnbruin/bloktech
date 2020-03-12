@@ -11,20 +11,19 @@
 
   <header>
     <nav>
-      <a href="/views/voornaam.ejs" class="backButton"><img src="/static/img/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
+      <a href="/voornaam/<%= id %>" class="backButton"><img src="/static/img/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
       <h1 class="stappen">Stap 3 / 7</h1>
     </nav>
     </header>
 
-    <form class="" action="/geboortedatum" method="post">
+    <form action="/geboortedatum" method="post">
       <label for="birthdate">Mijn geboortedatum is:</label>
-      <input id="birthdate" type="date" name="dateOfBirth" value="" required />
-
-      <input type="hidden" name="id" value="<%= id %>" />
+        <input id="birthdate" type="date" name="dateOfBirth" value="" required />
+        <input type="hidden" name="id" value="<%= id %>" />
 
       <p>Dit is de leeftijd die op uw profiel wordt getoond.</p>
 
-      <button name="button">Doorgaan</button>
+        <button name="button">Doorgaan</button>
     </form>
 
     <script src="/static/javascript/matchie.js"type="text/javascript"></script>

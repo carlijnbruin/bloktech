@@ -11,16 +11,16 @@
 
   <header>
     <nav>
-      <a href="/fotos_toevoegen" class="backButton"><img src="/static/img/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
+      <a href="/fotos_toevoegen/<%= id %>" class="backButton"><img src="/static/img/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
       <h1 class="stappen">Stap 7 / 7</h1>
     </nav>
   </header>
 
   <form class="" action="/tekst" method="post">
     <label for="tekstProfiel">Wat andere over mij moeten weten:
-      <textarea class="tekstProfiel" name="textProfile" rows="8" cols="80" placeholder="Ik studeer marketing en hou van golf!" name="textProfile"></textarea>
+      <textarea class="tekstProfiel" name="textProfile" rows="8" cols="80" placeholder="Ik studeer marketing en hou van golf!" name="textProfile" require></textarea>
+      <input type="hidden" name="id" value="<%= id %>" />
     </label>
-    <input type="hidden" name="id" value="<%= id %>" />
 
     <p>Deze tekst komt op uw profiel te staan.</p>
 

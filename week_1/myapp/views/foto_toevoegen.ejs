@@ -11,15 +11,15 @@
 
   <header>
     <nav>
-      <a href="/man_vrouw" class="backButton"><img src="/static/img/nav_pijltje.png" alt="navigatie naar vorige pagina"></a>
+      <a href="/man_vrouw/<%= id %>" class="backButton"><img src="/static/img/nav_pijltje.png" alt="navigatie naar vorige pagina"></a>
       <h1 class="stappen">Stap 6 / 7</h1>
     </nav>
   </header>
 
   <form class="" action="/afbeeldingen" method="post" enctype="multipart/form-data">
     <label>Voeg de mooiste foto van jezelf toe!
-        <input class="bestandFoto" type="file" accept="image/*" name="pictures">
-        <input type="hidden" name="id" value="<%= id %>" />
+      <input class="bestandFoto" type="file" accept="image/*" name="pictures" require>
+      <input type="hidden" name="id" value="<%= id %>" />
     </label>
 
     <p>Wist u dat een profiel met een foto veel meer kans op een match heeft?</p>
