@@ -1,8 +1,5 @@
 const express = require('express'); // a minimal and and flexible Node.js webapplication
 const bodyParser = require('body-parser');
-const passport = require('passport');
-const slug = require('slug');
-const path = require('path');
 const multer = require('multer');
 const upload = multer({dest: 'static/upload/' });
 const mongo = require('mongodb'); //om te verbinden met database
