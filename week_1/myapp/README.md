@@ -1,24 +1,24 @@
-#Welkom!
+# Welkom!
 
 In deze repository kunt u mijn nieuwe project zien, namelijk een datingssite met de naam Matchie.
 Dit project heb ik gemaakt voor het vak Backend voor de studie Communication and Multimedia Design van de Hogeschool van Amsterdam.
 
 Mijn naam is Carlijn Bruin en ik zit in het tweede studiejaar.
 
-##Over Backend:
+## Over Backend:
 
 Een web app bestaat uit frontend en backend. Backend is het deel dat ontzichtbaar is voor de gebruiker en frontend is hetgene wat de gebruiker ziet. Frontend noemen we de client en backend de server. De server stuurt bestanden naar de client, en de client kan weer dingen, zoals data, terugsturen naar de server, wat de server bijvoorbeeld weer in de database kan zetten. Dit gaat middels requests en responses.
 
 Om met de server te communiceren gebruiken we een command-line-interface, in een terminal. We bouwen web apps (server side) door middel van Node, dit is een open-source, cross-platform, run-time omgeving die JavaScript code server side uitvoert. Het is gebouwd in Chrome zijn V8 Javascript engine. Hierin gebruiken we NPM packages, dit zijn codes die al zijn geschreven door derden. We communiceren via http, renderen data via de server side door middel van templating, hiervoor heb ik EJS gebruikt, omdat dit het meest lijkt op HTML, waarin ik de client side bouw. Ten slotte stoppen we data in een database, die we later weer op kunnen vragen.
 
-##Uitleg over mijn project:
+## Uitleg over mijn project:
 
 Voor mijn datingssite project heb ik een jobstory bedacht, namelijk:
 Wanneer ik opzoek ga naar een date, wil ik mij kunnen registreren op een datingssite en een profiel aanmaken, zodat ik in in contact kan komen met andere singles en zij met mij.
 
 Bij dit project ga ik mij dus bezighouden met het registreren van gebruikers, en daarmee het aanmaken van een profiel. Hiervoor gaan gebruikers dus per pagina gevraagde gegevens over zichzelf invullen, wat daarna terecht komt op hun eigen specifieke profiel.
 
-##Uitleg over mijn code, van boven naar onder:
+## Uitleg over mijn code, van boven naar onder:
 
 1.
 ```
@@ -226,7 +226,7 @@ app.listen(port,  () => console.log(`Running my NodeJS server`))
 
 De server zit op poort 3000 en luistert dus ook telkens naar deze poort, om te kijken of hij codes uit moet voeren.
 
-##Het proces:
+## Het proces:
 
 1. Ik heb het een en ander geïnstalleerd, zoals een text editor (Atom), GitHub, Git, wat ik heb geconnect met met GitHub via de  terminal, Node en MongoDB geïnstalleerd in de terminal en Slack, om te communiceren met studiegenoten en leraren.
 
@@ -244,6 +244,6 @@ De server zit op poort 3000 en luistert dus ook telkens naar deze poort, om te k
 
 8. De ingevulde gegevens verstuur ik door middel van de EJS templating/JavaScript in de EJS files door naar de uiteindelijke eind pagina, namelijk de 'mijn_profiel.ejs' pagina. Hier vindt de gebruiker alle ingevulde gegevens in 1 overzicht terug.
 
-##Tot slot
+## Tot slot
 
 Ik heb hard mijn best gedaan om het werkend te laten maken en het werkt! Ik ben zeer tevreden met het eindresultaat voor backend. Tips en tops zijn uiteraard altijd welkom.
