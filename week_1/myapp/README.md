@@ -1,24 +1,30 @@
-#Welkom!
+# Welkom!
 
 In deze repository kunt u mijn nieuwe project zien, namelijk een datingssite met de naam Matchie.
-Dit project heb ik gemaakt voor het vak Backend voor de studie Communication and Multimedia Design van de Hogeschool van Amsterdam.
+Dit project heb ik gemaakt voor het vak Backend voor de studie Communication and Multimedia Design van de Hogeschool van Amsterdam. Mijn naam is Carlijn Bruin en ik zit in het tweede studiejaar.
 
-Mijn naam is Carlijn Bruin en ik zit in het tweede studiejaar.
+## Over Backend:
 
-##Over Backend:
+<img width="872" alt="Schermafbeelding 2020-03-15 om 21 33 47" src="https://user-images.githubusercontent.com/59669604/76710088-af7daa80-6704-11ea-8561-15d5c1d374b2.png">
 
 Een web app bestaat uit frontend en backend. Backend is het deel dat ontzichtbaar is voor de gebruiker en frontend is hetgene wat de gebruiker ziet. Frontend noemen we de client en backend de server. De server stuurt bestanden naar de client, en de client kan weer dingen, zoals data, terugsturen naar de server, wat de server bijvoorbeeld weer in de database kan zetten. Dit gaat middels requests en responses.
 
 Om met de server te communiceren gebruiken we een command-line-interface, in een terminal. We bouwen web apps (server side) door middel van Node, dit is een open-source, cross-platform, run-time omgeving die JavaScript code server side uitvoert. Het is gebouwd in Chrome zijn V8 Javascript engine. Hierin gebruiken we NPM packages, dit zijn codes die al zijn geschreven door derden. We communiceren via http, renderen data via de server side door middel van templating, hiervoor heb ik EJS gebruikt, omdat dit het meest lijkt op HTML, waarin ik de client side bouw. Ten slotte stoppen we data in een database, die we later weer op kunnen vragen.
 
-##Uitleg over mijn project:
+## Uitleg over mijn project:
 
 Voor mijn datingssite project heb ik een jobstory bedacht, namelijk:
 Wanneer ik opzoek ga naar een date, wil ik mij kunnen registreren op een datingssite en een profiel aanmaken, zodat ik in in contact kan komen met andere singles en zij met mij.
 
 Bij dit project ga ik mij dus bezighouden met het registreren van gebruikers, en daarmee het aanmaken van een profiel. Hiervoor gaan gebruikers dus per pagina gevraagde gegevens over zichzelf invullen, wat daarna terecht komt op hun eigen specifieke profiel.
 
-##Uitleg over mijn code, van boven naar onder:
+## Hoe ziet mijn web app eruit qua uiterlijk?
+
+De web app is responsive gemaakt, hieronder ziet u enkel de structuur en lay-out voor een small device. De afbeeldingen zijn op volgorde, van het eerste scherm naar het eind scherm.
+
+<img width="300" alt="Schermafbeelding 2020-03-15 om 20 18 43" src="https://user-images.githubusercontent.com/59669604/76708975-6a08af80-66fb-11ea-9f75-18ffe845b4df.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 18 56" src="https://user-images.githubusercontent.com/59669604/76708981-6ecd6380-66fb-11ea-8763-079c1b75c9a7.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 19 30" src="https://user-images.githubusercontent.com/59669604/76708984-74c34480-66fb-11ea-8523-eff9721f03a7.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 19 45" src="https://user-images.githubusercontent.com/59669604/76708986-7987f880-66fb-11ea-8b1a-91eb58f3f576.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 19 54" src="https://user-images.githubusercontent.com/59669604/76708987-7d1b7f80-66fb-11ea-9988-0b0cdb046a0c.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 20 17" src="https://user-images.githubusercontent.com/59669604/76708991-81479d00-66fb-11ea-8efc-d65292f2a2d2.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 23 12" src="https://user-images.githubusercontent.com/59669604/76708992-84428d80-66fb-11ea-9538-e7b7c09899d2.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 23 25" src="https://user-images.githubusercontent.com/59669604/76708994-886eab00-66fb-11ea-873e-11302e8dae4d.png">
+
+## Uitleg over mijn code, van boven naar onder:
 
 1.
 ```
@@ -63,6 +69,8 @@ app.use(session({
   secret: process.env.SESSION_SECRET
 }))
 ```
+
+Hiermee registreer je de npm packages die hierboven zijn geplaats en geef je een bepaalde route mee, van waar ze te vinden zijn, zoals bij static, kan je zien waar het static mapje te vinden is in de folderstructuur. In deze static map, zet je je CSS file, eigenlijk alle files waar je zonder toestemming bij kan komen.
 
 4.
 ```
@@ -226,7 +234,12 @@ app.listen(port,  () => console.log(`Running my NodeJS server`))
 
 De server zit op poort 3000 en luistert dus ook telkens naar deze poort, om te kijken of hij codes uit moet voeren.
 
-##Het proces:
+De data komt daarwerkelijk in de MongoDB database, zie hier:
+
+<img width="1000" alt="Schermafbeelding 2020-03-15 om 20 34 35" src="https://user-images.githubusercontent.com/59669604/76709134-6cb7d480-66fc-11ea-9cb3-229d419b1ab4.png">
+
+
+## Het proces:
 
 1. Ik heb het een en ander geïnstalleerd, zoals een text editor (Atom), GitHub, Git, wat ik heb geconnect met met GitHub via de  terminal, Node en MongoDB geïnstalleerd in de terminal en Slack, om te communiceren met studiegenoten en leraren.
 
@@ -238,12 +251,54 @@ De server zit op poort 3000 en luistert dus ook telkens naar deze poort, om te k
 
 5. Kennis opdoen over requests (opvragen van bestand), status codes (zoals 404, error), response (reageren op request), routes en URL's, app.use, app.get (komt in de url te staan, info ophalen, zoals een bestand) en app.post (submit a resource, komt niet in de url te staan) codes en deze ook toepassen op mijn project. Ook hoe je een website dynamisch kan maken, door de input van de gebruiker ergens anders op de site te laten verschijnen, door middel van JavaScript te gebruiken vanuit je index.js file naar je EJS files.
 
+_Voorbeeld (zie de <%= .. %> tags, hier komt de ingevulde input, d.m.v. het 'name' attribuut bij formulier elementen (input types bv.):_
+
+```
+  <a href="/tekst_profiel/<%= id %>" class="backButton"><img src="/static/img/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
+      <h1 class="stappen">Mijn profiel</h1>
+    </nav>
+  </header>
+
+<div class="mijnProfielNaarLinks">
+  <div class="profielBackground">
+    <h2><%= firstName %>, <span><%= dateOfBirth %></span></h2>
+    <img src="/static/img/location_icon.png" alt="locatie icoon">
+
+    <p><%= province %></p>
+    <img src="/<%= profilePic.path %>" id="profielfoto" alt="mijn profiel foto">
+
+    <div class="location"></div>
+
+    <p>'<%= textProfile %>'</p>
+```
+
 6. Het opslaan van ingevulde data in het formulier door een gebruiker en elke gebruiker een specifieke ID te geven. Dit was een uitdaging, omdat ik meerdere EJS files gebruik en er op elk EJS file dit een ander form ingevuld moet worden door de gebruiker. De ID moet ik dus bij elk file meenemen naar het volgende file.
 
 7. Meerdere app.get en app.post aangemaakt met elke app.post een nieuwe functie. In deze functie zorg ik ervoor dat de ingevulde gegevens onder deze specifieke id/gebruiker komt te staan en verzonden wordt naar de MongoDB database. Daarnaast zorg ik ervoor dat de gegevens per functie in een Express session komt te staan. Dit zorgt ervoor dat als de gebruiker de browser weg drukt en weer terug komt op de browser, de ingevulde gegevens niet verloren gaan en de gebruiker weer verder kan gaan waar hij/zij gebleven is. Door middel van de res.redirect wordt de gebruiker doorverwezen naar een nieuw EJS bestand en wordt de al ingevulde gegevens meeverstuurd. Bij de laatste redirect worden de ingevulde gegevens pas doorgestuurd naar de mongoDB database.
 
 8. De ingevulde gegevens verstuur ik door middel van de EJS templating/JavaScript in de EJS files door naar de uiteindelijke eind pagina, namelijk de 'mijn_profiel.ejs' pagina. Hier vindt de gebruiker alle ingevulde gegevens in 1 overzicht terug.
 
-##Tot slot
+## Tot slot
 
 Ik heb hard mijn best gedaan om het werkend te laten maken en het werkt! Ik ben zeer tevreden met het eindresultaat voor backend. Tips en tops zijn uiteraard altijd welkom.
+
+### Bronnen
+
+* Slides van de Backend lessen van de HvA
+* www.stackoverflow.com
+* https://nodejs.dev
+* https://syntax.fm/show/188/the-fundamentals-server-side
+* https://dev.to/lydiahallie/javascript-visualized-the-javascript-engine-4cdf
+* https://www.youtube.com/watch?v=HAE-iYJ8_14
+* https://www.youtube.com/watch?v=t64md6HAztU
+* https://www.freecodecamp.org
+* https://www.youtube.com/watch?v=jgtXhdxVisw
+* https://www.youtube.com/watch?v=tdqXTNqNrr0
+* https://expressjs.com
+* https://zellwk.com/blog/frontend-vs-backend/
+* https://ejs.co/
+* https://pugjs.org/api/getting-started.html
+* https://httpstatuses.com/
+* https://www.mongodb.com/cloud/atlas
+* https://flaviocopes.com/express-sessions/
+* Gezond verstand
