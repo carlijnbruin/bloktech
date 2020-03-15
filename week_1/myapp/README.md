@@ -251,7 +251,7 @@ De data komt daarwerkelijk in de MongoDB database, zie hier:
 
 5. Kennis opdoen over requests (opvragen van bestand), status codes (zoals 404, error), response (reageren op request), routes en URL's, app.use, app.get (komt in de url te staan, info ophalen, zoals een bestand) en app.post (submit a resource, komt niet in de url te staan) codes en deze ook toepassen op mijn project. Ook hoe je een website dynamisch kan maken, door de input van de gebruiker ergens anders op de site te laten verschijnen, door middel van JavaScript te gebruiken vanuit je index.js file naar je EJS files.
 
-_Voorbeeld (zie de <%= .. %> tags, hier komt de ingevulde input, d.m.v. het 'name' attribuut bij formulier elementen (input types bv.):
+_Voorbeeld (zie de <%= .. %> tags, hier komt de ingevulde input, d.m.v. het 'name' attribuut bij formulier elementen (input types bv.):_
 
 ```
   <a href="/tekst_profiel/<%= id %>" class="backButton"><img src="/static/img/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
@@ -270,7 +270,7 @@ _Voorbeeld (zie de <%= .. %> tags, hier komt de ingevulde input, d.m.v. het 'nam
     <div class="location"></div>
 
     <p>'<%= textProfile %>'</p>
-```_
+```
 
 6. Het opslaan van ingevulde data in het formulier door een gebruiker en elke gebruiker een specifieke ID te geven. Dit was een uitdaging, omdat ik meerdere EJS files gebruik en er op elk EJS file dit een ander form ingevuld moet worden door de gebruiker. De ID moet ik dus bij elk file meenemen naar het volgende file.
 
