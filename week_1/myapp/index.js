@@ -1,181 +1,166 @@
-const express = require('express'); // a minimal and and flexible Node.js webapplication
-const bodyParser = require('body-parser');
-const multer = require('multer');
-const upload = multer({dest: 'static/upload/' });
-const mongo = require('mongodb'); //om te verbinden met database
-require('dotenv').config();
-const session = require('express-session');
-const app = express();
-const port = 3000;
+const express = require('express');               // a minimal and and flexible Node.js webapplication
+const bodyParser = require('body-parser');        // parses (ontleed) de meeste dingen die je geeft (JSON, forms, etc.)
+const multer = require('multer');                 // een middleware om om te gaan met multipart/form-data (files)
+const upload = multer({dest: 'static/upload/' }); // Geeft aan waar de files heengaan als ze worden geuploadt
+const mongo = require('mongodb');                 // mongo database
+require('dotenv').config();                       // .env bestand
+const path = require('path');                     // heeft met het pad naar een file te maken
+const session = require('express-session');       // express.session, als gebruiker browser afsluit en weer terugkomt, zijn de ingevulde gegevens er nog
+const app = express();                            // express
+const port = 3000;                                // de poort waar de server mee verbindt
 
 let db;
 const MongoClient = mongo.MongoClient;
 const uri = "mongodb+srv://" + process.env.DB_USERNAME + ":" + process.env.DB_PASSWORD + "@clustermatchie-dvmte.azure.mongodb.net/test?retryWrites=true&w=majority";
+//verbinding maken met de Mongo database
 
 MongoClient.connect(uri, function (err, client){
   if (err) {
-    throw err;
+    throw err;                                    //niet geconnect met de client? Dan geeft het een error
   }
-  db = client.db(process.env.DB_NAME)
+  db = client.db(process.env.DB_NAME)             //wel geconnect? Dan de info in juiste database zetten. Name staat in de .env file.
 })
 
-app.use('/static', express.static(__dirname + '/static'));
-app.set('view engine', 'ejs');
-app.set('views', 'views');
-app.use(bodyParser.urlencoded({extended: true}))
+app.use('/static', express.static(__dirname + '/static')); //zitten bestanden in die direct vanuit de server verzonden kunnen worden, zonder toestemming. Kan bv. HTML, CSS, images en JS in.
+app.set('view engine', 'ejs');                    // template engine EJS, om variabele te vervangen met echte data
+app.set('views', 'views');                        //EJS bestanden zitten in de views map
+app.use(bodyParser.urlencoded({extended: true}))  // urlencoded = wat browsers gebruiken om forms te verzenden. body-parser ontleed de data en stored het in req.body, wat daarachter komt is van name attribuut van form types.
 app.use(session({
   resave: false,
   saveUninitialized: true,
-  secret: process.env.SESSION_SECRET
+  secret: process.env.SESSION_SECRET              //verwijzing naar data in .env bestand
 }))
 
 
 /***********************/
-/********* GET *********/
+/********* GET *********/                         //Get request a resource
 /***********************/
 
 
-app.get('/', function(req, res){
+app.get('/', function(req, res){                  // zodat pagina het ook doet zonder de /aanmelden
   res.redirect('/aanmelden');
 })
 
-//GET to request data from a document
+
 app.get('/aanmelden', function(req, res){
-  res.render('aanmelden.ejs');
+  res.render('aanmelden.ejs');                    // render = rendered op de server (gecombineerd met echte data). Uiteindelijke HTML wordt gestuurd naar de client.
 })
 
-//GET, to request data from a document
+
 app.get('/voornaam/:id', function(req, res){
-  const id = req.params.id; // var id opslaan
-  res.render('voornaam.ejs', req.session.user); // twee parameters toegeven. de pagina en de juiste user die is gekozen.
+  const id = req.params.id;                       // var id opslaan
+  res.render('voornaam.ejs', req.session.user);   // twee parameters toegeven. de pagina en de unieke user waar data in wordt gezet.
 })
 
-//GET, to request data from a document
+
 app.get('/geboortedatum/:id', function(req, res){
-  const id = req.params.id; //var id opslaan
-  res.render('geboortedatum.ejs', req.session.user);
+  const id = req.params.id;                       //var id opslaan
+  res.render('geboortedatum.ejs', req.session.user); // twee parameters toegeven. de pagina en de unieke user waar data in wordt gezet.
 })
 
-//GET, to request data from a document
+
 app.get('/provincie/:id', function(req, res){
-  const id = req.params.id; //var id opslaan
-  res.render('provincie.ejs', req.session.user);
+  const id = req.params.id;                      //var id opslaan
+  res.render('provincie.ejs', req.session.user); // twee parameters toegeven. de pagina en de unieke user waar data in wordt gezet.
 })
 
-//GET, to request data from a document
+
 app.get('/geslacht/:id', function(req, res){
-  const id = req.params.id; //var id opslaan
-  res.render('man_vrouw.ejs', req.session.user);
+  const id = req.params.id;                      //var id opslaan
+  res.render('man_vrouw.ejs', req.session.user); // twee parameters toegeven. de pagina en de unieke user waar data in wordt gezet.
 })
 
-//GET, to request data from a document
+
 app.get('/afbeeldingen/:id', function(req, res){
-  const id = req.params.id; //var id opslaan
-  res.render('foto_toevoegen.ejs', req.session.user);
+  const id = req.params.id;                      //var id opslaan
+  res.render('foto_toevoegen.ejs', req.session.user); // twee parameters toegeven. de pagina en de unieke user waar data in wordt gezet.
 })
 
-//GET, to request data from a document
+
 app.get('/tekst/:id', function(req, res){
-  const id = req.params.id; //var id opslaan
-  res.render('tekst_profiel.ejs', req.session.user);
+  const id = req.params.id;                      //var id opslaan
+  res.render('tekst_profiel.ejs', req.session.user); // twee parameters toegeven. de pagina en de unieke user waar data in wordt gezet.
 })
 
-//GET, to request data from a document
+
 app.get('/profiel/:id', function(req, res){
-  const id = req.params.id; //var id opslaan
-  res.render('mijn_profiel.ejs', req.session.user); // Laat dit ejs bestand zien
+  const id = req.params.id;                      //var id opslaan
+  res.render('mijn_profiel.ejs', req.session.user); // twee parameters toegeven. de pagina en de unieke user waar data in wordt gezet.
 })
 
 
 /************************/
-/********* POST *********/
+/********* POST *********/                      //Submit a resource
 /************************/
 
 
-//POST, to send data from a document
 app.post('/aanmelden', addUser)
 
-//Functie die ingevulde  data terug gaat sturen naar de server en in de lege array 'user' stopt.
-function addUser(req, res){ //request, response
-  req.session.user = { // pushed onderstaande ingevulde data in req.session.user
+function addUser(req, res){                     //request, response
+  req.session.user = {                          // pushed onderstaande ingevulde data in req.session.user
     email: req.body.email,
     id: req.body.userName,
     password: req.body.password
   }
-  console.log(req.session.user);  //Laat in de terminal de ingevulde gegevens zien.
-  res.redirect('voornaam/' + req.body.userName); //Geeft bestand 'voornaam.ejs' weer bij client, plus de voornaam die de gebruiker heeft ingevuld.
-  // Dit is de route!! Niet ejs bestand.
+  console.log(req.session.user);                //Laat in de terminal de ingevulde gegevens zien.
+  res.redirect('voornaam/' + req.body.userName); //Dit is de route + de unieke id (username)
 }
 
 
-//POST, to send data from a document
 app.post('/voornaam', addFirstName)
 
-//Functie die ingevulde  data terug gaat sturen naar de server en in de array 'user' stopt. (komt niet bij de andere data??? vraag!)
-function addFirstName(req, res){ //request, response
-  req.session.user.firstName = req.body.firstName; // zet de input firstName in de user
-  console.log(req.body.firstName); //Laat in de terminal de ingevulde gegevens zien.
-  res.redirect('geboortedatum/' + req.body.id); //Geeft bestand 'geboortedatum.ejs' weer bij client. Dit is de route!! Niet ejs bestand.
+function addFirstName(req, res){                //request, response
+  req.session.user.firstName = req.body.firstName;
+  console.log(req.session.user.firstName);      //Laat in de terminal de ingevulde gegevens zien.
+  res.redirect('geboortedatum/' + req.body.id); //Dit is de route + de unieke id (username)
 }
 
 
-//POST, to send data from a document
 app.post('/geboortedatum', addDateOfBirth)
 
-//Functie die ingevulde  data terug gaat sturen naar de server en in de array 'user' stopt. (komt niet bij de andere data??? vraag!)
-function addDateOfBirth(req, res){ //request, response
+function addDateOfBirth(req, res){              //request, response
   req.session.user.dateOfBirth = req.body.dateOfBirth;
-  console.log(req.body.dateOfBirth); //Laat in de terminal de ingevulde gegevens zien.
-  res.redirect('provincie/' + req.body.id); //Geeft bestand 'provincie.ejs' weer bij client. Dit is de route!! Niet ejs bestand.
+  console.log(req.session.user.dateOfBirth);    //Laat in de terminal de ingevulde gegevens zien.
+  res.redirect('provincie/' + req.body.id);     //Dit is de route + de unieke id (username)
 }
 
 
-//POST, to send data from a document
 app.post('/provincie', addProvince)
 
-//Functie die ingevulde  data terug gaat sturen naar de server en in de array 'user' stopt. (komt niet bij de andere data??? vraag!)
-function addProvince(req, res){ //request, response
+function addProvince(req, res){                 //request, response
   req.session.user.province = req.body.province;
-  console.log(req.body.province); //Laat in de terminal de ingevulde gegevens zien.
-  res.redirect('geslacht/' + req.body.id); //Geeft bestand 'man_vrouw.ejs' weer bij client. Dit is de route!! Niet ejs bestand.
+  console.log(req.session.user.province);       //Laat in de terminal de ingevulde gegevens zien.
+  res.redirect('geslacht/' + req.body.id);      //Dit is de route + de unieke id (username)
 }
 
 
-//POST, to send data from a document
 app.post('/geslacht', addGender)
 
-//Functie die ingevulde  data terug gaat sturen naar de server en in de array 'user' stopt. (komt niet bij de andere data??? vraag!)
-function addGender(req, res){ //request, response
+function addGender(req, res){                   //request, response
   req.session.user.gender = req.body.gender;
-  console.log(req.body.gender); //Laat in de terminal de ingevulde gegevens zien.
-  res.redirect('afbeeldingen/' + req.body.id); //Geeft bestand 'foto_toevoegen.ejs' weer bij client. Dit is de route!! Niet ejs bestand.
+  console.log(req.session.user.gender);         //Laat in de terminal de ingevulde gegevens zien.
+  res.redirect('afbeeldingen/' + req.body.id);  //Dit is de route + de unieke id (username)
 }
 
 
-//POST, to send data from a document
-app.post('/afbeeldingen', upload.single('pictures'), addPictures)
+app.post('/afbeeldingen', upload.single('pictures'), addPictures) // accepteert maar 1 image
 
-
-//Functie die ingevulde  data terug gaat sturen naar de server en in de array 'user' stopt. (komt niet bij de andere data??? vraag!)
-function addPictures(req, res){ //request, response
-  req.session.user.profilePic = req.file;
-  console.log(req.body.profilePic); //Laat in de terminal de ingevulde gegevens zien.
-  res.redirect('tekst/' + req.body.id); //Geeft bestand 'tekst_profiel.ejs' weer bij client. Dit is de route!! Niet ejs bestand.
+function addPictures(req, res){                 //request, response
+  req.session.user.profilePic = req.file;       // multer gebruikt req.file
+  console.log(req.session.user.profilePic);     //Laat in de terminal de ingevulde gegevens zien.
+  res.redirect('tekst/' + req.body.id);         //Dit is de route + de unieke id (username)
 }
 
 
-//POST, to send data from a document
 app.post('/tekst', addText)
 
-
-//Functie die ingevulde  data terug gaat sturen naar de server en in de array 'user' stopt. (komt niet bij de andere data??? vraag!)
-function addText(req, res){ //request, response
+function addText(req, res){                     //request, response
 
   req.session.user.textProfile = req.body.textProfile;
-
-  db.collection('user').insertOne(req.session.user); //Alle info van die specifieke id/user naar database sturen. Heb de website van MongoDB hiervoor geraadpleegd.
-  console.log(req.body.textProfile); //Laat in de terminal de ingevulde gegevens zien.
-  res.redirect('profiel/' + req.body.id); //Geeft bestand 'mijn_profiel.ejs' weer bij client. Dit is de route!! Niet ejs bestand.
+  db.collection('user').insertOne(req.session.user); //Alle info van die specifieke id/user naar database sturen.
+  console.log(req.session.user.textProfile);    //Laat in de terminal de ingevulde gegevens zien.
+  res.redirect('profiel/' + req.body.id);       //Dit is de route + de unieke id (username)
 }
+
 
 app.listen(port,  () => console.log(`Running my NodeJS server`))
