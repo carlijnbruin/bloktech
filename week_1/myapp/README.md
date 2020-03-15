@@ -1,9 +1,20 @@
 # Welkom!
 
 In deze repository kunt u mijn nieuwe project zien, namelijk een datingssite met de naam Matchie.
-Dit project heb ik gemaakt voor het vak Backend voor de studie Communication and Multimedia Design van de Hogeschool van Amsterdam.
+Dit project heb ik gemaakt voor het vak Backend voor de studie Communication and Multimedia Design van de Hogeschool van Amsterdam. Mijn naam is Carlijn Bruin en ik zit in het tweede studiejaar.
 
-Mijn naam is Carlijn Bruin en ik zit in het tweede studiejaar.
+## Hoe ziet mijn app eruit?
+
+De web app is responsive gemaakt, hieronder ziet u enkel de structuur en lay-out voor een small device. De afbeeldingen zijn op volgorde, van het eerste scherm naar het eind scherm.
+
+<img width="340" alt="Schermafbeelding 2020-03-15 om 20 18 43" src="https://user-images.githubusercontent.com/59669604/76708975-6a08af80-66fb-11ea-9f75-18ffe845b4df.png">
+<img width="340" alt="Schermafbeelding 2020-03-15 om 20 18 56" src="https://user-images.githubusercontent.com/59669604/76708981-6ecd6380-66fb-11ea-8763-079c1b75c9a7.png">
+<img width="340" alt="Schermafbeelding 2020-03-15 om 20 19 30" src="https://user-images.githubusercontent.com/59669604/76708984-74c34480-66fb-11ea-8523-eff9721f03a7.png">
+<img width="340" alt="Schermafbeelding 2020-03-15 om 20 19 45" src="https://user-images.githubusercontent.com/59669604/76708986-7987f880-66fb-11ea-8b1a-91eb58f3f576.png">
+<img width="340" alt="Schermafbeelding 2020-03-15 om 20 19 54" src="https://user-images.githubusercontent.com/59669604/76708987-7d1b7f80-66fb-11ea-9988-0b0cdb046a0c.png">
+<img width="340" alt="Schermafbeelding 2020-03-15 om 20 20 17" src="https://user-images.githubusercontent.com/59669604/76708991-81479d00-66fb-11ea-8efc-d65292f2a2d2.png">
+<img width="340" alt="Schermafbeelding 2020-03-15 om 20 23 12" src="https://user-images.githubusercontent.com/59669604/76708992-84428d80-66fb-11ea-9538-e7b7c09899d2.png">
+<img width="340" alt="Schermafbeelding 2020-03-15 om 20 23 25" src="https://user-images.githubusercontent.com/59669604/76708994-886eab00-66fb-11ea-873e-11302e8dae4d.png">
 
 ## Over Backend:
 
@@ -226,6 +237,11 @@ app.listen(port,  () => console.log(`Running my NodeJS server`))
 
 De server zit op poort 3000 en luistert dus ook telkens naar deze poort, om te kijken of hij codes uit moet voeren.
 
+De data komt daarwerkelijk in de MongoDB database, zie hier:
+
+<img width="1280" alt="Schermafbeelding 2020-03-15 om 20 34 35" src="https://user-images.githubusercontent.com/59669604/76709134-6cb7d480-66fc-11ea-9cb3-229d419b1ab4.png">
+
+
 ## Het proces:
 
 1. Ik heb het een en ander geïnstalleerd, zoals een text editor (Atom), GitHub, Git, wat ik heb geconnect met met GitHub via de  terminal, Node en MongoDB geïnstalleerd in de terminal en Slack, om te communiceren met studiegenoten en leraren.
@@ -247,3 +263,9 @@ De server zit op poort 3000 en luistert dus ook telkens naar deze poort, om te k
 ## Tot slot
 
 Ik heb hard mijn best gedaan om het werkend te laten maken en het werkt! Ik ben zeer tevreden met het eindresultaat voor backend. Tips en tops zijn uiteraard altijd welkom.
+
+### Bronnen
+
+* Slides van de Backend lessen van de HvA
+* www.stackoverflow.com
+* Gezond verstand
