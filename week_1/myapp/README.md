@@ -5,6 +5,8 @@ Dit project heb ik gemaakt voor het vak Backend voor de studie Communication and
 
 ## Over Backend:
 
+<img width="872" alt="Schermafbeelding 2020-03-15 om 21 33 47" src="https://user-images.githubusercontent.com/59669604/76710088-af7daa80-6704-11ea-8561-15d5c1d374b2.png">
+
 Een web app bestaat uit frontend en backend. Backend is het deel dat ontzichtbaar is voor de gebruiker en frontend is hetgene wat de gebruiker ziet. Frontend noemen we de client en backend de server. De server stuurt bestanden naar de client, en de client kan weer dingen, zoals data, terugsturen naar de server, wat de server bijvoorbeeld weer in de database kan zetten. Dit gaat middels requests en responses.
 
 Om met de server te communiceren gebruiken we een command-line-interface, in een terminal. We bouwen web apps (server side) door middel van Node, dit is een open-source, cross-platform, run-time omgeving die JavaScript code server side uitvoert. Het is gebouwd in Chrome zijn V8 Javascript engine. Hierin gebruiken we NPM packages, dit zijn codes die al zijn geschreven door derden. We communiceren via http, renderen data via de server side door middel van templating, hiervoor heb ik EJS gebruikt, omdat dit het meest lijkt op HTML, waarin ik de client side bouw. Ten slotte stoppen we data in een database, die we later weer op kunnen vragen.
@@ -67,6 +69,8 @@ app.use(session({
   secret: process.env.SESSION_SECRET
 }))
 ```
+
+Hiermee registreer je de npm packages die hierboven zijn geplaats en geef je een bepaalde route mee, van waar ze te vinden zijn, zoals bij static, kan je zien waar het static mapje te vinden is in de folderstructuur. In deze static map, zet je je CSS file, eigenlijk alle files waar je zonder toestemming bij kan komen.
 
 4.
 ```
@@ -261,4 +265,19 @@ Ik heb hard mijn best gedaan om het werkend te laten maken en het werkt! Ik ben 
 
 * Slides van de Backend lessen van de HvA
 * www.stackoverflow.com
+* https://nodejs.dev
+* https://syntax.fm/show/188/the-fundamentals-server-side
+* https://dev.to/lydiahallie/javascript-visualized-the-javascript-engine-4cdf
+* https://www.youtube.com/watch?v=HAE-iYJ8_14
+* https://www.youtube.com/watch?v=t64md6HAztU
+* https://www.freecodecamp.org
+* https://www.youtube.com/watch?v=jgtXhdxVisw
+* https://www.youtube.com/watch?v=tdqXTNqNrr0
+* https://expressjs.com
+* https://zellwk.com/blog/frontend-vs-backend/
+* https://ejs.co/
+* https://pugjs.org/api/getting-started.html
+* https://httpstatuses.com/
+* https://www.mongodb.com/cloud/atlas
+* https://flaviocopes.com/express-sessions/
 * Gezond verstand
