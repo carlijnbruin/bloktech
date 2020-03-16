@@ -40,7 +40,7 @@ De web app is responsive gemaakt, hieronder ziet u enkel de structuur en lay-out
 
 <img width="300" alt="Schermafbeelding 2020-03-15 om 20 18 43" src="https://user-images.githubusercontent.com/59669604/76708975-6a08af80-66fb-11ea-9f75-18ffe845b4df.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 18 56" src="https://user-images.githubusercontent.com/59669604/76708981-6ecd6380-66fb-11ea-8763-079c1b75c9a7.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 19 30" src="https://user-images.githubusercontent.com/59669604/76708984-74c34480-66fb-11ea-8523-eff9721f03a7.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 19 45" src="https://user-images.githubusercontent.com/59669604/76708986-7987f880-66fb-11ea-8b1a-91eb58f3f576.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 19 54" src="https://user-images.githubusercontent.com/59669604/76708987-7d1b7f80-66fb-11ea-9988-0b0cdb046a0c.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 20 17" src="https://user-images.githubusercontent.com/59669604/76708991-81479d00-66fb-11ea-8efc-d65292f2a2d2.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 23 12" src="https://user-images.githubusercontent.com/59669604/76708992-84428d80-66fb-11ea-9538-e7b7c09899d2.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 23 25" src="https://user-images.githubusercontent.com/59669604/76708994-886eab00-66fb-11ea-873e-11302e8dae4d.png">
 
-## Uitleg over mijn code, van boven naar onder:
+## Uitleg over mijn code, van boven naar onder (zie ook de comments in de index.js file):
 
 1.
 ```
