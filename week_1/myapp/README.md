@@ -18,21 +18,37 @@ Wanneer ik opzoek ga naar een date, wil ik mij kunnen registreren op een datings
 
 Bij dit project ga ik mij dus bezighouden met het registreren van gebruikers, en daarmee het aanmaken van een profiel. Hiervoor gaan gebruikers dus per pagina gevraagde gegevens over zichzelf invullen, wat daarna terecht komt op hun eigen specifieke profiel.
 
+## Hoe kan je mijn project installeren?
+
+1. Haal de repository binnen, dat kan door rechtsboven op clone or download te klikken. Downloadt de repository dan als een zip bestand.
+
+2. Vraag mij persoonlijk om de .env file te verkrijgen.
+
+3. Vraag mij naar mijn IP-adres, zodat de MongoDB database werkt. Whitelist dan mijn IP-adres. 
+
+4. Installeer de node_modules, door in de terminal in het mapje 'myapp' te zetten: ```npm install```.
+
+5. Open je terminal en run het project, in mijn geval de map 'myapp', door ```node index.js``` in te voeren.
+
+6. Open de pagina door deze URL in je browser te zetten: http://localhost:3000/.
+
+7. Tada! Het werkt.
+
 ## Hoe ziet mijn web app eruit qua uiterlijk?
 
 De web app is responsive gemaakt, hieronder ziet u enkel de structuur en lay-out voor een small device. De afbeeldingen zijn op volgorde, van het eerste scherm naar het eind scherm.
 
 <img width="300" alt="Schermafbeelding 2020-03-15 om 20 18 43" src="https://user-images.githubusercontent.com/59669604/76708975-6a08af80-66fb-11ea-9f75-18ffe845b4df.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 18 56" src="https://user-images.githubusercontent.com/59669604/76708981-6ecd6380-66fb-11ea-8763-079c1b75c9a7.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 19 30" src="https://user-images.githubusercontent.com/59669604/76708984-74c34480-66fb-11ea-8523-eff9721f03a7.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 19 45" src="https://user-images.githubusercontent.com/59669604/76708986-7987f880-66fb-11ea-8b1a-91eb58f3f576.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 19 54" src="https://user-images.githubusercontent.com/59669604/76708987-7d1b7f80-66fb-11ea-9988-0b0cdb046a0c.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 20 17" src="https://user-images.githubusercontent.com/59669604/76708991-81479d00-66fb-11ea-8efc-d65292f2a2d2.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 23 12" src="https://user-images.githubusercontent.com/59669604/76708992-84428d80-66fb-11ea-9538-e7b7c09899d2.png"><img width="300" alt="Schermafbeelding 2020-03-15 om 20 23 25" src="https://user-images.githubusercontent.com/59669604/76708994-886eab00-66fb-11ea-873e-11302e8dae4d.png">
 
-## Uitleg over mijn code, van boven naar onder:
+## Uitleg over mijn code, van boven naar onder (zie ook de comments in de index.js file):
 
 1.
 ```
-const express = require('express'); // a minimal and and flexible Node.js webapplication
+const express = require('express');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const upload = multer({dest: 'static/upload/' });
-const mongo = require('mongodb'); //om te verbinden met database
+const mongo = require('mongodb'); 
 require('dotenv').config();
 const session = require('express-session');
 const app = express();
@@ -55,7 +71,7 @@ MongoClient.connect(uri, function (err, client){
 })
 ```
 
-Dit gaat over de database die ik gebruik, namelijk MongoDB. Dit is een open-source cross-platform document-oriented database programma. Geclassificeerd als een non-SQL database programma. Het gebruikt een JSON-like document met schema's. MongoDB staat bekend om zijn snelheid die de database heeft. Om deze database te gebruiken maak je een .env file aan. Hierin zet je informatie, die je niet in je index.js bestand wil zetten, zoals je MongoDB username en wachtwoord. Deze .env file zet je in je .gitignore file, omdat je niet wil dat andere gebruikers van Github deze gegevens in kunnen zien. In de const uri code regel (dit is een url regel) refereer je naar de gegevens in de .env bestand. In de if statement daaronder geef je aan dat wanneer de mongoClient niet verbonden is met de server, je een error te zien krijgt, en anders krijg je het juiste bestand te zien.
+Dit gaat over de database die ik gebruik, namelijk MongoDB. Dit is een open-source, cross-platform, document-oriented database programma. Geclassificeerd als een non-SQL database programma. Het gebruikt een JSON-like document met schema's. MongoDB staat bekend om de snelheid die de database heeft. Om deze database te gebruiken maak je een .env file aan. Hierin zet je informatie, die je niet in je index.js bestand wil zetten, zoals je MongoDB username en wachtwoord. Deze .env file zet je in je .gitignore file, omdat je niet wil dat andere gebruikers van Github deze gegevens in kunnen zien. In de const uri code regel (dit is een url regel) refereer je naar de gegevens in de .env bestand. In de if statement daaronder geef je aan dat wanneer de mongoClient niet verbonden is met de server, je een error te zien krijgt, en anders krijg je het juiste bestand te zien.
 
 3.
 ```
@@ -85,146 +101,126 @@ app.get('/aanmelden', function(req, res){
 
 //GET, to request data from a document
 app.get('/voornaam/:id', function(req, res){
-  const id = req.params.id; // var id opslaan
-  res.render('voornaam.ejs', req.session.user); // twee parameters toegeven. de pagina en de juiste user die is gekozen.
+  res.render('voornaam.ejs', req.session.user);
 })
 
 //GET, to request data from a document
 app.get('/geboortedatum/:id', function(req, res){
-  const id = req.params.id; //var id opslaan
   res.render('geboortedatum.ejs', req.session.user);
 })
 
 //GET, to request data from a document
 app.get('/provincie/:id', function(req, res){
-  const id = req.params.id; //var id opslaan
   res.render('provincie.ejs', req.session.user);
 })
 
 //GET, to request data from a document
 app.get('/geslacht/:id', function(req, res){
-  const id = req.params.id; //var id opslaan
   res.render('man_vrouw.ejs', req.session.user);
 })
 
 //GET, to request data from a document
 app.get('/afbeeldingen/:id', function(req, res){
-  const id = req.params.id; //var id opslaan
   res.render('foto_toevoegen.ejs', req.session.user);
 })
 
 //GET, to request data from a document
 app.get('/tekst/:id', function(req, res){
-  const id = req.params.id; //var id opslaan
   res.render('tekst_profiel.ejs', req.session.user);
 })
 
 //GET, to request data from a document
 app.get('/profiel/:id', function(req, res){
-  const id = req.params.id; //var id opslaan
-  res.render('mijn_profiel.ejs', req.session.user); // Laat dit ejs bestand zien
+  res.render('mijn_profiel.ejs', req.session.user);
 })
 ```
+
+App.get zorgt ervoor dat de server data stuurt naar de client. In dit geval, het ejs bestand en die je opgeeft door res.render. Deze file wordt doorgestuurd naar de client, en mocht je in de ejs file refereren naar informatie uit de req.session.user (de ingevulde gegevens van de gebruiker komt hierin te staan), dan kan je een html tag veranderen met de ingevulde data door de gebruiker. Dan komt er bijvoorbeeld bij voornaam te staan: ```<label> Hi <%= id %>, wat is je echte voornaam?</label>```, waardoor de eerste echte id, in mijn geval de userName, bij de client wordt weergegeven.
 
 5.
 
 ```
-//POST, to send data from a document
 app.post('/aanmelden', addUser)
 
-//Functie die ingevulde  data terug gaat sturen naar de server en in de lege array 'user' stopt.
-function addUser(req, res){ //request, response
-  req.session.user = { // pushed onderstaande ingevulde data in req.session.user
+function addUser(req, res){ 
+  req.session.user = {
     email: req.body.email,
     id: req.body.userName,
     password: req.body.password
   }
-  console.log(req.session.user);  //Laat in de terminal de ingevulde gegevens zien.
-  res.redirect('voornaam/' + req.body.userName); //Geeft bestand 'voornaam.ejs' weer bij client, plus de voornaam die de gebruiker heeft ingevuld.
-  // Dit is de route!! Niet ejs bestand.
+  console.log(req.session.user); 
+  res.redirect('voornaam/' + req.body.userName);
 }
 ```
 
-Door middel van de req.session.user, zet je het object wat daaronder staat, in de session. Session zorgt ervoor dat als de gebruiker de browser weg drukt en weer terug komt op de browser, de ingevulde gegevens niet verloren gaan en de gebruiker weer verder kan gaan waar hij/zij gebleven is.
+Door middel van een app.post stuurt de client data naar de server. Dus de ingevulde data.
+
+Door middel van de req.session.user, zet je het object wat daaronder staat, in de session.user. Session zorgt ervoor dat als de gebruiker de browser weg drukt en weer terug komt op de browser, de ingevulde gegevens niet verloren gaan en de gebruiker weer verder kan gaan waar hij/zij gebleven is. Je kan hier een bepaalde tijd op zetten, hoelang je wilt dat de browser de gegevens opslaat. 
 
 Ik heb een id met req.body.userName aangemaakt, om hiermee een unieke gebruiker aan te geven en alle ingevulde gegevens onder deze specifieke id op te slaan.
 
-De res.redirect zorgt ervoor dat wanneer de gevraagde gegevens ingevuld zijn, je door wordt gezonden naar de volgende pagina. voornaam/ + req.body.userName is de route, dit ziet de gebruiker in de url staan. De pagina naam, niet het .ejs bestand, maar de gegeven route, plus de specifieke id, dus de username van de gebruiker.
+De res.redirect zorgt ervoor dat wanneer de gevraagde gegevens ingevuld zijn, je door wordt gezonden naar de volgende pagina. voornaam/ + req.body.userName is de route, dit ziet de gebruiker in de url staan. De pagina naam, niet het .ejs bestand, maar de gegeven route, plus de specifieke id, dus de username van de gebruiker. De naam van deze route, in dit geval dus: voornaam/ komt overeen met de route die in het formulier achter de action staat. Hier wordt het formulier naartoe verzonden.
 
 
 ```
-//POST, to send data from a document
 app.post('/voornaam', addFirstName)
 
-//Functie die ingevulde  data terug gaat sturen naar de server en in de array 'user' stopt. (komt niet bij de andere data??? vraag!)
-function addFirstName(req, res){ //request, response
-  req.session.user.firstName = req.body.firstName; // zet de input firstName in de user
-  console.log(req.body.firstName); //Laat in de terminal de ingevulde gegevens zien.
-  res.redirect('geboortedatum/' + req.body.id); //Geeft bestand 'geboortedatum.ejs' weer bij client. Dit is de route!! Niet ejs bestand.
+function addFirstName(req, res){
+  req.session.user.firstName = req.body.firstName;
+  console.log(req.session.user); 
+  res.redirect('geboortedatum/' + req.body.id);
 }
 
 
-//POST, to send data from a document
 app.post('/geboortedatum', addDateOfBirth)
 
-//Functie die ingevulde  data terug gaat sturen naar de server en in de array 'user' stopt. (komt niet bij de andere data??? vraag!)
-function addDateOfBirth(req, res){ //request, response
+function addDateOfBirth(req, res){ 
   req.session.user.dateOfBirth = req.body.dateOfBirth;
-  console.log(req.body.dateOfBirth); //Laat in de terminal de ingevulde gegevens zien.
-  res.redirect('provincie/' + req.body.id); //Geeft bestand 'provincie.ejs' weer bij client. Dit is de route!! Niet ejs bestand.
+  console.log(req.session.user);
+  res.redirect('provincie/' + req.body.id);
 }
 
 
-//POST, to send data from a document
 app.post('/provincie', addProvince)
 
-//Functie die ingevulde  data terug gaat sturen naar de server en in de array 'user' stopt. (komt niet bij de andere data??? vraag!)
-function addProvince(req, res){ //request, response
+function addProvince(req, res){ 
   req.session.user.province = req.body.province;
-  console.log(req.body.province); //Laat in de terminal de ingevulde gegevens zien.
-  res.redirect('geslacht/' + req.body.id); //Geeft bestand 'man_vrouw.ejs' weer bij client. Dit is de route!! Niet ejs bestand.
+  console.log(req.session.user); 
+  res.redirect('geslacht/' + req.body.id);
 }
 
 
-//POST, to send data from a document
 app.post('/geslacht', addGender)
 
-//Functie die ingevulde  data terug gaat sturen naar de server en in de array 'user' stopt. (komt niet bij de andere data??? vraag!)
-function addGender(req, res){ //request, response
+function addGender(req, res){ 
   req.session.user.gender = req.body.gender;
-  console.log(req.body.gender); //Laat in de terminal de ingevulde gegevens zien.
-  res.redirect('afbeeldingen/' + req.body.id); //Geeft bestand 'foto_toevoegen.ejs' weer bij client. Dit is de route!! Niet ejs bestand.
+  console.log(req.session.user); 
+  res.redirect('afbeeldingen/' + req.body.id); 
 }
 
 
-//POST, to send data from a document
 app.post('/afbeeldingen', upload.single('pictures'), addPictures)
 
-
-//Functie die ingevulde  data terug gaat sturen naar de server en in de array 'user' stopt. (komt niet bij de andere data??? vraag!)
-function addPictures(req, res){ //request, response
+function addPictures(req, res){ 
   req.session.user.profilePic = req.file;
-  console.log(req.body.profilePic); //Laat in de terminal de ingevulde gegevens zien.
-  res.redirect('tekst/' + req.body.id); //Geeft bestand 'tekst_profiel.ejs' weer bij client. Dit is de route!! Niet ejs bestand.
+  console.log(req.session.user);
+  res.redirect('tekst/' + req.body.id);
 }
 
 
-//POST, to send data from a document
 app.post('/tekst', addText)
 
-
-//Functie die ingevulde  data terug gaat sturen naar de server en in de array 'user' stopt. (komt niet bij de andere data??? vraag!)
-function addText(req, res){ //request, response
+function addText(req, res){
 
   req.session.user.textProfile = req.body.textProfile;
 
-  db.collection('user').insertOne(req.session.user); //Alle info van die specifieke id/user naar database sturen. Heb de website van MongoDB hiervoor geraadpleegd.
-  console.log(req.body.textProfile); //Laat in de terminal de ingevulde gegevens zien.
-  res.redirect('profiel/' + req.body.id); //Geeft bestand 'mijn_profiel.ejs' weer bij client. Dit is de route!! Niet ejs bestand.
+  db.collection('user').insertOne(req.session.user);
+  console.log(req.session.user);
+  res.redirect('profiel/' + req.body.id);
 }
 ```
 
-De `db.collection('user').insertOne(req.session.user);` code regel, zorgt ervoor dat alles wat in de 'req.session.user' is gestopt, bij elke app.post functie, dat al deze ingevulde gegevens in de mongoDB database komt te staan. Dit komt door de method 'insertOne'. MongoDB maakt overigens ook zelf automatisch een id aan, dus in principe kan je dit ook weglaten. Voor de zekerheid heb ik het er wel in staan, in het geval dat er wellicht iets mis gaat. Ik heb er dus voor gekozen dat wanneer alle gegevens ingevuld zijn van de gebruiker, dat het dan pas door wordt gestuurd naar de database.
+De `db.collection('user').insertOne(req.session.user);` code regel, zorgt ervoor dat alles wat in de 'req.session.user' is gestopt, bij elke app.post functie, dat al deze ingevulde gegevens in een keer in de mongoDB database komt te staan. Dit komt door de method 'insertOne'. MongoDB maakt overigens ook zelf automatisch een id aan, dus in principe kan je je eigen id ook weglaten. Ik heb het erin gelaten, omdat ik in mijn EJS bestanden ook refereer naar deze id. Ik heb er dus voor gekozen dat wanneer alle gegevens ingevuld zijn van de gebruiker, dat het dan pas door wordt gestuurd naar de database.
 
 6.
 
@@ -277,6 +273,8 @@ _Voorbeeld (zie de <%= .. %> tags, hier komt de ingevulde input, d.m.v. het 'nam
 7. Meerdere app.get en app.post aangemaakt met elke app.post een nieuwe functie. In deze functie zorg ik ervoor dat de ingevulde gegevens onder deze specifieke id/gebruiker komt te staan en verzonden wordt naar de MongoDB database. Daarnaast zorg ik ervoor dat de gegevens per functie in een Express session komt te staan. Dit zorgt ervoor dat als de gebruiker de browser weg drukt en weer terug komt op de browser, de ingevulde gegevens niet verloren gaan en de gebruiker weer verder kan gaan waar hij/zij gebleven is. Door middel van de res.redirect wordt de gebruiker doorverwezen naar een nieuw EJS bestand en wordt de al ingevulde gegevens meeverstuurd. Bij de laatste redirect worden de ingevulde gegevens pas doorgestuurd naar de mongoDB database.
 
 8. De ingevulde gegevens verstuur ik door middel van de EJS templating/JavaScript in de EJS files door naar de uiteindelijke eind pagina, namelijk de 'mijn_profiel.ejs' pagina. Hier vindt de gebruiker alle ingevulde gegevens in 1 overzicht terug.
+
+9. De puntjes op de i gezet en de laatste comments in het bestand gezet. Kijk hiervoor naar de index.js file.
 
 ## Tot slot
 
