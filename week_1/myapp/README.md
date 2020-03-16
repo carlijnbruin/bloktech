@@ -22,17 +22,17 @@ Bij dit project ga ik mij dus bezighouden met het registreren van gebruikers, en
 
 1. Haal de repository binnen, dat kan door rechtsboven op clone or download te klikken. Downloadt de repository dan als een zip bestand;
 
-2. Vraag mij persoonlijk om de .env file te verkrijgen;
+2. Vraag mij persoonlijk om de .env file te verkrijgen.
 
 3. Vraag mij naar mijn IP-adres, zodat de MongoDB database werkt. Whitelist dan mijn IP-adres. 
 
-4. Installeer de node_modules, door in de terminal in het mapje 'myapp' te zetten: ```npm install```
+4. Installeer de node_modules, door in de terminal in het mapje 'myapp' te zetten: ```npm install```.
 
 5. Open je terminal en run het project, in mijn geval de map 'myapp', door ```node index.js``` in te voeren.
 
-6. Open de pagina door deze URL in je browser te zetten: http://localhost:3000/
+6. Open de pagina door deze URL in je browser te zetten: http://localhost:3000/.
 
-7. Tada! 
+7. Tada! Het werkt.
 
 ## Hoe ziet mijn web app eruit qua uiterlijk?
 
