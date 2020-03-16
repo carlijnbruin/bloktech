@@ -18,6 +18,22 @@ Wanneer ik opzoek ga naar een date, wil ik mij kunnen registreren op een datings
 
 Bij dit project ga ik mij dus bezighouden met het registreren van gebruikers, en daarmee het aanmaken van een profiel. Hiervoor gaan gebruikers dus per pagina gevraagde gegevens over zichzelf invullen, wat daarna terecht komt op hun eigen specifieke profiel.
 
+## Hoe kan je mijn project installeren?
+
+1. Haal de repository binnen, dat kan door rechtsboven op clone or download te klikken. Downloadt de repository dan als een zip bestand;
+
+2. Vraag mij persoonlijk om de .env file te verkrijgen;
+
+3. Vraag mij naar mijn IP-adres, zodat de MongoDB database werkt. Whitelist dan mijn IP-adres. 
+
+4. Installeer de node_modules, door in de terminal in het mapje 'myapp' te zetten: ```npm install```
+
+5. Open je terminal en run het project, in mijn geval de map 'myapp', door ```node index.js``` in te voeren.
+
+6. Open de pagina door deze URL in je browser te zetten: http://localhost:3000/
+
+7. Tada! 
+
 ## Hoe ziet mijn web app eruit qua uiterlijk?
 
 De web app is responsive gemaakt, hieronder ziet u enkel de structuur en lay-out voor een small device. De afbeeldingen zijn op volgorde, van het eerste scherm naar het eind scherm.
