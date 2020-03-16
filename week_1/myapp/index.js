@@ -53,32 +53,32 @@ app.get('/voornaam/:id', function(req, res){
 
 
 app.get('/geboortedatum/:id', function(req, res){
-	res.render('geboortedatum.ejs', req.session.user); // Die tweede parameter is als je dus bv de username wilt renderen op de voornaam.ejs bestand. Dit haalt hij dan uit de req.session.user, waarbij de gebruiker de userName heeft aangemaakt. In die geval is het voor de backbutton, om een id uit de req.session.user te pakken.
+	res.render('geboortedatum.ejs', req.session.user); // Die tweede parameter is als je dus bv de username wilt renderen op de voornaam.ejs bestand. Dit haalt hij dan uit de req.session.user, waarbij de gebruiker de userName heeft aangemaakt. In dit geval is het voor de backbutton, om een id uit de req.session.user te pakken.
 });
 
 
 app.get('/provincie/:id', function(req, res){
-	res.render('provincie.ejs', req.session.user); // Die tweede parameter is als je dus bv de username wilt renderen op de voornaam.ejs bestand. Dit haalt hij dan uit de req.session.user, waarbij de gebruiker de userName heeft aangemaakt. In die geval is het voor de backbutton, om een id uit de req.session.user te pakken.
+	res.render('provincie.ejs', req.session.user); // Die tweede parameter is als je dus bv de username wilt renderen op de voornaam.ejs bestand. Dit haalt hij dan uit de req.session.user, waarbij de gebruiker de userName heeft aangemaakt. In dit geval is het voor de backbutton, om een id uit de req.session.user te pakken.
 });
 
 
 app.get('/geslacht/:id', function(req, res){
-	res.render('man_vrouw.ejs', req.session.user); // Die tweede parameter is als je dus bv de username wilt renderen op de voornaam.ejs bestand. Dit haalt hij dan uit de req.session.user, waarbij de gebruiker de userName heeft aangemaakt. In die geval is het voor de backbutton, om een id uit de req.session.user te pakken.
+	res.render('man_vrouw.ejs', req.session.user); // Die tweede parameter is als je dus bv de username wilt renderen op de voornaam.ejs bestand. Dit haalt hij dan uit de req.session.user, waarbij de gebruiker de userName heeft aangemaakt. In dit geval is het voor de backbutton, om een id uit de req.session.user te pakken.
 });
 
 
 app.get('/afbeeldingen/:id', function(req, res){
-	res.render('foto_toevoegen.ejs', req.session.user); // Die tweede parameter is als je dus bv de username wilt renderen op de voornaam.ejs bestand. Dit haalt hij dan uit de req.session.user, waarbij de gebruiker de userName heeft aangemaakt. In die geval is het voor de backbutton, om een id uit de req.session.user te pakken.
+	res.render('foto_toevoegen.ejs', req.session.user); // Die tweede parameter is als je dus bv de username wilt renderen op de voornaam.ejs bestand. Dit haalt hij dan uit de req.session.user, waarbij de gebruiker de userName heeft aangemaakt. In dit geval is het voor de backbutton, om een id uit de req.session.user te pakken.
 });
 
 
 app.get('/tekst/:id', function(req, res){
-	res.render('tekst_profiel.ejs', req.session.user); // Die tweede parameter is als je dus bv de username wilt renderen op de voornaam.ejs bestand. Dit haalt hij dan uit de req.session.user, waarbij de gebruiker de userName heeft aangemaakt. In die geval is het voor de backbutton, om een id uit de req.session.user te pakken.
+	res.render('tekst_profiel.ejs', req.session.user); // Die tweede parameter is als je dus bv de username wilt renderen op de voornaam.ejs bestand. Dit haalt hij dan uit de req.session.user, waarbij de gebruiker de userName heeft aangemaakt. In dit geval is het voor de backbutton, om een id uit de req.session.user te pakken.
 });
 
 
 app.get('/profiel/:id', function(req, res){
-	res.render('mijn_profiel.ejs', req.session.user); // Die tweede parameter is als je dus bv de username wilt renderen op de voornaam.ejs bestand. Dit haalt hij dan uit de req.session.user, waarbij de gebruiker de userName heeft aangemaakt. In die geval is het voor de backbutton, om een id uit de req.session.user te pakken.
+	res.render('mijn_profiel.ejs', req.session.user); // Die tweede parameter is als je dus bv de username wilt renderen op de voornaam.ejs bestand. Dit haalt hij dan uit de req.session.user, waarbij de gebruiker de userName heeft aangemaakt. In dit geval is het voor de backbutton, om een id uit de req.session.user te pakken.
 });
 
 
@@ -87,7 +87,7 @@ app.get('/profiel/:id', function(req, res){
 /************************/
 
 
-app.post('/aanmelden', addUser);                 // /aanmelden komt overeen met action in form
+app.post('/sendFormAanmelden', addUser);                 // /aanmelden komt overeen met action in form
 
 function addUser(req, res){                     // request, response
 	req.session.user = {                          // pushed onderstaande ingevulde data in req.session.user, zonder session, is het altijd geldig
@@ -100,7 +100,7 @@ function addUser(req, res){                     // request, response
 }
 
 
-app.post('/voornaam', addFirstName);             // /voornaam komt overeen met action in form
+app.post('/sendFormVoornaam', addFirstName);             // /voornaam komt overeen met action in form
 
 function addFirstName(req, res){                //request, response
 	req.session.user.firstName = req.body.firstName; //Je slaat firstName op in de req.session.user
@@ -109,7 +109,7 @@ function addFirstName(req, res){                //request, response
 }
 
 
-app.post('/geboortedatum', addDateOfBirth);      // /geboortedatum komt overeen met action in form
+app.post('/sendFormGeboortedatum', addDateOfBirth);      // /geboortedatum komt overeen met action in form
 
 function addDateOfBirth(req, res){              //request, response
 	req.session.user.dateOfBirth = req.body.dateOfBirth; //Je slaat dateOfBirth op in de req.session.user
@@ -118,7 +118,7 @@ function addDateOfBirth(req, res){              //request, response
 }
 
 
-app.post('/provincie', addProvince);             // //provincie komt overeen met action in form
+app.post('/sendFormProvincie', addProvince);             // //provincie komt overeen met action in form
 
 function addProvince(req, res){                 //request, response
 	req.session.user.province = req.body.province;//Je slaat province op in de req.session.user
@@ -127,7 +127,7 @@ function addProvince(req, res){                 //request, response
 }
 
 
-app.post('/geslacht', addGender);                // /geslacht komt overeen met action in form
+app.post('/sendFormGeslacht', addGender);                // /geslacht komt overeen met action in form
 
 function addGender(req, res){                   //request, response
 	req.session.user.gender = req.body.gender;    //Je slaat gender op in de req.session.user
@@ -136,7 +136,7 @@ function addGender(req, res){                   //request, response
 }
 
 
-app.post('/afbeeldingen', upload.single('pictures'), addPictures); // /afbeeldingen komt overeen met action in form, het accepteert maar 1 image
+app.post('/sendFormAfbeeldingen', upload.single('pictures'), addPictures); // /afbeeldingen komt overeen met action in form, het accepteert maar 1 image
 
 function addPictures(req, res){                 //request, response
 	req.session.user.profilePic = req.file;       //Je slaat profilePic op in de req.session.user
@@ -145,7 +145,7 @@ function addPictures(req, res){                 //request, response
 }
 
 
-app.post('/tekst', addText);                     // /tekst komt overeen met action in form
+app.post('/sendFormTekst', addText);                     // /tekst komt overeen met action in form
 
 function addText(req, res){                     //request, response
 
