@@ -20,7 +20,7 @@ Bij dit project ga ik mij dus bezighouden met het registreren van gebruikers, en
 
 ## Hoe kan je mijn project installeren?
 
-1. Haal de repository binnen, dat kan door rechtsboven op clone or download te klikken. Downloadt de repository dan als een zip bestand;
+1. Haal de repository binnen, dat kan door rechtsboven op clone or download te klikken. Downloadt de repository dan als een zip bestand.
 
 2. Vraag mij persoonlijk om de .env file te verkrijgen.
 
