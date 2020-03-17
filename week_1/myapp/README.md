@@ -299,4 +299,5 @@ Ik heb hard mijn best gedaan om het werkend te laten maken en het werkt! Ik ben 
 * https://httpstatuses.com/
 * https://www.mongodb.com/cloud/atlas
 * https://flaviocopes.com/express-sessions/
+* https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository - license voorbeeld
 * Gezond verstand
