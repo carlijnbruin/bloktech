@@ -283,21 +283,39 @@ Ik heb hard mijn best gedaan om het werkend te laten maken en het werkt! Ik ben 
 ### Bronnen
 
 * Slides van de Backend lessen van de HvA
-* www.stackoverflow.com
-* https://nodejs.dev
-* https://syntax.fm/show/188/the-fundamentals-server-side
-* https://dev.to/lydiahallie/javascript-visualized-the-javascript-engine-4cdf
-* https://www.youtube.com/watch?v=HAE-iYJ8_14
-* https://www.youtube.com/watch?v=t64md6HAztU
-* https://www.freecodecamp.org
-* https://www.youtube.com/watch?v=jgtXhdxVisw
-* https://www.youtube.com/watch?v=tdqXTNqNrr0
-* https://expressjs.com
-* https://zellwk.com/blog/frontend-vs-backend/
-* https://ejs.co/
-* https://pugjs.org/api/getting-started.html
-* https://httpstatuses.com/
-* https://www.mongodb.com/cloud/atlas
-* https://flaviocopes.com/express-sessions/
-* https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository - license voorbeeld
+
+* wStack Overflow - Where Developers Learn, Share, & Build Careers. (z.d.). Geraadpleegd op 10 februari 2020, van https://stackoverflow.com/
+
+* Introduction to Node.js. (z.d.). Geraadpleegd op 10 februari 2020, van https://nodejs.dev/
+
+* The Fundamentals - Server Side . (z.d.). Geraadpleegd op 24 februari 2020, van https://syntax.fm/show/188/the-fundamentals-server-side
+
+* Hallie, L. (2019, 13 december). 🚀⚙️ JavaScript Visualized: the JavaScript Engine. Geraadpleegd op 11 februari 2020, van https://dev.to/lydiahallie/javascript-visualized-the-javascript-engine-4cdf
+
+* Danny de Vries. (2020, 16 januari). Be() - client & server. Geraadpleegd op 13 februari 2020, van https://www.youtube.com/watch?v=HAE-iYJ8_14
+
+* Danny de Vries. (2020b, 16 januari). Be() - modules. Geraadpleegd op 12 februari 2020, van https://www.youtube.com/watch?v=t64md6HAztU
+
+* FreeCodeCamp.org. (z.d.). Geraadpleegd op 15 februari 2020, van https://www.freecodecamp.org
+
+* Danny de Vries. (2020c, 16 januari). Be() - npm. Geraadpleegd op 20 februari 2020, van https://www.youtube.com/watch?v=jgtXhdxVisw
+
+* Danny de Vries. (2020d, 23 januari). Be() - npm  en packages (demo). Geraadpleegd op 25 februari 2020, van https://www.youtube.com/watch?v=tdqXTNqNrr0
+
+* Express - Node.js web application framework. (z.d.). Geraadpleegd op 26 februari 2020, van https://expressjs.com
+
+* Frontend vs Backend. (2019, 24 juli). Geraadpleegd op 25 februari 2020, van https://zellwk.com/blog/frontend-vs-backend/
+
+* Embedded JavaScript templating. (z.d.). Geraadpleegd op 20 februari 2020, van https://ejs.co/
+
+* Getting Started – Pug. (z.d.). Geraadpleegd op 20 februari 2020, van https://pugjs.org/api/getting-started.html
+
+* HTTP Status Codes — httpstatuses.com. (z.d.). Geraadpleegd op 2 maart 2020, van https://httpstatuses.com/
+
+* Managed MongoDB Hosting | Database-as-a-Service. (z.d.). Geraadpleegd op 10 maart 2020, van https://www.mongodb.com/cloud/atlas
+
+* Copes, F. (2018, 2 september). Express Sessions. Geraadpleegd op 10 maart 2020, van https://flaviocopes.com/express-sessions/
+
+* Licensing a repository - GitHub Help. (z.d.). Geraadpleegd op 15 maart 2020, van https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository
+
 * Gezond verstand
