@@ -318,4 +318,6 @@ Ik heb hard mijn best gedaan om het werkend te laten maken en het werkt! Ik ben 
 
 * Licensing a repository - GitHub Help. (z.d.). Geraadpleegd op 15 maart 2020, van https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository
 
+* Goldspink, M. (2017, 18 januari). Best Text Editor? Atom vs Sublime vs Visual Studio Code vs Vim. Geraadpleegd op 19 maart 2020, van https://www.codementor.io/@mattgoldspink/best-text-editor-atom-sublime-vim-visual-studio-code-du10872i7
+
 * Gezond verstand
