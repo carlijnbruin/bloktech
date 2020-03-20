@@ -320,4 +320,6 @@ Ik heb hard mijn best gedaan om het werkend te laten maken en het werkt! Ik ben 
 
 * Goldspink, M. (2017, 18 januari). Best Text Editor? Atom vs Sublime vs Visual Studio Code vs Vim. Geraadpleegd op 19 maart 2020, van https://www.codementor.io/@mattgoldspink/best-text-editor-atom-sublime-vim-visual-studio-code-du10872i7
 
+* C. (z.d.). Cxpartners/coding-standards. Geraadpleegd op 20 maart 2020, van https://github.com/cxpartners/coding-standards
+
 * Gezond verstand
