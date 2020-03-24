@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <%- include('head.ejs'); %>
+
+  <body id="tekst_profiel">
+    <img src="/static/images/logo-datingssite.png" class="logo" alt="Matchie logo">
+
+    <header>
+      <nav>
+        <a href="/mijnprofiel/<%= id %>" class="backButton"><img src="/static/images/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
+        <h1 class="stappen">Bewerk biografie</h1>
+      </nav>
+    </header>
+
+    <form class="" action="/sendUpdate" method="post">
+      <label for="tekstProfiel">Wat andere over mij moeten weten:
+        <textarea class="tekstProfiel" name="updateTextProfile" rows="8" cols="80" require> <%= textProfile %> </textarea>
+      </label>
+
+      <input type="hidden" name="_id" value="<%= _id %>" /> //mongoDB id
+
+      <p>Deze tekst komt op uw profiel te staan.</p>
+
+      <button name="button" class="formButton">Bewerk</button>
+    </form>
+
+    <script src="/static/javascript/matchie.js"type="text/javascript"></script>
+  </body>
+</html>

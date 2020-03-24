@@ -1,43 +1,42 @@
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <link href="/static/css/styles.css" rel="stylesheet" type='text/css'</link>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <title>Matchie</title>
-</head>
+<!DOCTYPE html>
 
-<body id="provincie">
-    <img src="/static/img/logo-datingssite.png" class="logo" alt="Matchie logo">
+<html lang="en">
 
-  <header>
-    <nav>
-      <a href="/geboortedatum/<%= id %>" class="backButton"><img src="/static/img/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
-      <h1 class="stappen">Stap 4 / 7</h1>
-    </nav>
-  </header>
+  <%- include('head.ejs'); %>
 
-  <form class="" action="/sendFormProvincie" method="post">
-    <label for="provincie">Ik woon in de provincie:</label>
-    <select id="provincie" name="province" required>
-      <option value="Drenthe">Drenthe</option>
-      <option value="Flevoland">Flevoland</option>
-      <option value="Friesland">Friesland</option>
-      <option value="Gelderland">Gelderland</option>
-      <option value="Groningen">Groningen</option>
-      <option value="Limburg">Limburg</option>
-      <option value="Noord-Brabant">Noord-Brabant</option>
-      <option value="Noord-Holland">Noord-Holland</option>
-      <option value="Overijssel">Overijssel</option>
-      <option value="Utrecht">Utrecht</option>
-      <option value="Zeeland">Zeeland</option>
-      <option value="Zuid-Holland">Zuid-Holland</option>
-    </select>
+  <body id="provincie">
+    <img src="/static/images/logo-datingssite.png" class="logo" alt="Matchie logo">
 
-    <input type="hidden" name="id" value="<%= id %>" />
-    <p>Zodat wij aan u kunnen laten zien hoe ver singles van u vandaan zijn!</p>
+    <header>
+      <nav>
+        <a href="/geboortedatum/<%= id %>" class="backButton"><img src="/static/images/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
+        <h1 class="stappen">Stap 4 / 7</h1>
+      </nav>
+    </header>
 
-    <button name="button">Doorgaan</button>
-  </form>
+    <form class="" action="/sendFormProvincie" method="post">
+      <label for="provincie">Ik woon in de provincie:</label>
+      <select id="provincie" name="province" required>
+        <option value="Drenthe">Drenthe</option>
+        <option value="Flevoland">Flevoland</option>
+        <option value="Friesland">Friesland</option>
+        <option value="Gelderland">Gelderland</option>
+        <option value="Groningen">Groningen</option>
+        <option value="Limburg">Limburg</option>
+        <option value="Noord-Brabant">Noord-Brabant</option>
+        <option value="Noord-Holland">Noord-Holland</option>
+        <option value="Overijssel">Overijssel</option>
+        <option value="Utrecht">Utrecht</option>
+        <option value="Zeeland">Zeeland</option>
+        <option value="Zuid-Holland">Zuid-Holland</option>
+      </select>
 
-  <script src="/static/javascript/matchie.js"type="text/javascript"></script>
-</body>
+      <input type="hidden" name="id" value="<%= id %>" />
+      <p>Zodat wij aan u kunnen laten zien hoe ver singles van u vandaan zijn!</p>
+
+      <button name="button" class="formButton">Doorgaan</button>
+    </form>
+
+    <script src="/static/javascript/matchie.js"type="text/javascript"></script>
+  </body>
+</html>

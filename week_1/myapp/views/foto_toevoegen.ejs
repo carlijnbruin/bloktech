@@ -1,32 +1,31 @@
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <link href="/static/css/styles.css" rel="stylesheet" type='text/css'</link>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <title>Matchie</title>
-</head>
+<!DOCTYPE html>
 
-<body id="fotostoevoegen">
-  <img src="/static/img/logo-datingssite.png" class="logo" alt="Matchie logo">
+<html lang="en">
 
-  <header>
-    <nav>
-      <a href="/man_vrouw/<%= id %>" class="backButton"><img src="/static/img/nav_pijltje.png" alt="navigatie naar vorige pagina"></a>
-      <h1 class="stappen">Stap 6 / 7</h1>
-    </nav>
-  </header>
+  <%- include('head.ejs'); %>
 
-  <form class="" action="/sendFormAfbeeldingen" method="post" enctype="multipart/form-data">
-    <label>Voeg de mooiste foto van jezelf toe!
-      <input class="bestandFoto" type="file" accept="image/*" name="pictures" require>
-      <input type="hidden" name="id" value="<%= id %>" />
-    </label>
+  <body id="fotostoevoegen">
+    <img src="/static/images/logo-datingssite.png" class="logo" alt="Matchie logo">
 
-    <p>Wist u dat een profiel met een foto veel meer kans op een match heeft?</p>
+    <header>
+      <nav>
+        <a href="/geslacht/<%= id %>" class="backButton"><img src="/static/images/nav_pijltje.png" alt="navigatie naar vorige pagina"></a>
+        <h1 class="stappen">Stap 6 / 7</h1>
+      </nav>
+    </header>
 
-    <button name="button">Doorgaan</button>
+    <form class="" action="/sendFormAfbeeldingen" method="post" enctype="multipart/form-data">
+      <label>Voeg de mooiste foto van jezelf toe!
+        <input class="bestandFoto" type="file" accept="image/*" name="pictures" require>
+        <input type="hidden" name="id" value="<%= id %>" />
+      </label>
 
-  </form>
+      <p>Wist u dat een profiel met een foto veel meer kans op een match heeft?</p>
 
-  <script src="/static/javascript/matchie.js"type="text/javascript"></script>
-</body>
+      <button name="button" class="formButton">Doorgaan</button>
+
+    </form>
+
+    <script src="/static/javascript/matchie.js"type="text/javascript"></script>
+  </body>
+</html>

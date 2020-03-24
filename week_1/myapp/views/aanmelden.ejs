@@ -1,32 +1,31 @@
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <link href='/static/css/styles.css' rel="stylesheet" type='text/css'</link>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <title>Matchie</title>
-</head>
+<!DOCTYPE html>
 
-<body id="aanmelden">
-  <img src="/static/img/logo-datingssite.png" class="logo" alt="Matchie logo">
+<html lang="en">
 
-    <form class="" action="/sendFormAanmelden" method="post">
-      <fieldset>
-        <legend>Meld je aan!</legend>
+  <%- include('head.ejs'); %>
 
-        <label for="username">Gebruikersnaam</label>
-        <input id="username" type="text" name="userName" required>
+  <body id="aanmelden">
+    <img src="/static/images/logo-datingssite.png" class="logo" alt="Matchie logo">
 
-        <label for="email">E-mail</label>
-        <input id="email" type="email" name="email" required>
+      <form class="" action="/sendFormAanmelden" method="post">
+        <fieldset>
+          <legend>Meld je aan!</legend>
 
-        <label for="password">Wachtwoord*</label>
-        <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" id="password" type="password" name="password" required>
-        <p>* Min. 6 karakters, waarvan 1 hoofdletter en een cijfer.</p>
-        <button name="button">Maak een profiel aan</button>
-      </fieldset>
-    </form>
+          <label for="username">Gebruikersnaam</label>
+          <input id="username" type="text" name="userName" required>
 
-  <p class="vanAanmeldenTotInloggen">Ben je al geregistreerd? <a href="inloggen.html">Log in</a></p>
+          <label for="email">E-mail</label>
+          <input id="email" type="email" name="email" required>
 
-  <script src="/static/javascript/matchie.js"type="text/javascript"></script>
-</body>
+          <label for="password">Wachtwoord*</label>
+          <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" id="password" type="password" name="password" required>
+          <p>* Min. 6 karakters, waarvan 1 hoofdletter en een cijfer.</p>
+          <button name="button" id="button1">Maak een profiel aan</button>
+        </fieldset>
+      </form>
+
+      <p class="vanAanmeldenTotInloggen">Ben je al geregistreerd? <a href="inloggen.html">Log in</a></p>
+
+      <script src="/static/javascript/matchie.js"type="text/javascript"></script>
+    </body>
+</html>

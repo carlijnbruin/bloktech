@@ -1,31 +1,30 @@
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <link href="/static/css/styles.css" rel="stylesheet" type='text/css'</link>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <title>Matchie</title>
-</head>
+<!DOCTYPE html>
 
-<body id="voornaam">
-    <img src="/static/img/logo-datingssite.png" class="logo" alt="Matchie logo">
+<html lang="en">
 
-  <header>
-    <nav>
-      <a href="/aanmelden" class="backButton"><img src="/static/img/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
-      <h1 class="stappen">Stap 2 / 7</h1>
-    </nav>
-  </header>
+  <%- include('head.ejs'); %>
 
-  <form class="" action="/sendFormVoornaam" method="post">
-    <label> Hi <%= id %>, wat is je echte voornaam?
-      <input type="text" name="firstName" value="" required />
-      <input type="hidden" name="id" value="<%= id %>" />
-    </label>
+  <body id="voornaam">
+    <img src="/static/images/logo-datingssite.png" class="logo" alt="Matchie logo">
 
-    <p>Gebruik hiervoor uw echte voornaam, een bijnaam is niet nodig.</p>
+    <header>
+      <nav>
+        <a href="/aanmelden" class="backButton"><img src="/static/images/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
+        <h1 class="stappen">Stap 2 / 7</h1>
+      </nav>
+    </header>
 
-<button name="button">Doorgaan</button>
-  </form>
+    <form class="" action="/sendFormVoornaam" method="post">
+      <label> Hi <%= id %>, wat is je echte voornaam?
+        <input type="text" name="firstName" value="" required />
+        <input type="hidden" name="id" value="<%= id %>" />
+      </label>
 
-  <script src="/static/javascript/matchie.js" type="text/javascript"></script>
-</body>
+      <p>Gebruik hiervoor uw echte voornaam, een bijnaam is niet nodig.</p>
+
+      <button name="button" class="formButton">Doorgaan</button>
+    </form>
+
+    <script src="/static/javascript/matchie.js" type="text/javascript"></script>
+  </body>
+</html>
