@@ -9,7 +9,7 @@
 
     <header>
       <nav>
-        <a href="/mijnprofiel/<%= id %>" class="backButton"><img src="/static/images/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
+        <a href="/profiel/<%= _id %>" class="backButton"><img src="/static/images/nav_pijltje.png" class="pijltjeTerug" alt="navigatie naar vorige pagina"></a>
         <h1 class="stappen">Bewerk biografie</h1>
       </nav>
     </header>
@@ -19,7 +19,7 @@
         <textarea class="tekstProfiel" name="updateTextProfile" rows="8" cols="80" require> <%= textProfile %> </textarea>
       </label>
 
-      <input type="hidden" name="_id" value="<%= _id %>" /> //mongoDB id
+      <input type="hidden" name="_id" value="<%= _id %>"
 
       <p>Deze tekst komt op uw profiel te staan.</p>
 

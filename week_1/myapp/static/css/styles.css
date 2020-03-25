@@ -11,37 +11,38 @@ background-repeat: no-repeat;
 background-size: cover;
 }
 
-/*****************************/
-/*****************************/
-/******** BEGINSCHERM ********/
-/*****************************/
-/*****************************/
-
-#beginscherm img{
-  width: 20em;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50%;
+.logo{
+  display: none;
 }
 
-#beginscherm h1{
-  font-size: 1em;
-  max-width: 20em;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1em;
-  font-weight: 300;
+nav{
+  display: flex;
+  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
+  padding: 0.5em;
+  background-color: white;
+}
+
+nav h1{
   color: grey;
+  font-weight: normal;
+  position: relative;
+  left: 40%;
+  transform: translateX(-60%);
+  top: 0.5em;
 }
 
-#beginscherm a button{
-  position: absolute;
+button{
+  display: block;
+  padding: 1em 2em 1em 2em;
+  border-radius: 40px;
+  margin-top: 1em;
+  max-width: 18em;
   width: 100%;
-  height: 100%;
-  opacity: 0;
+  font-size: 1.3em;
+  border-color: #EB5014;
+  box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
+  background-color: #EB5014;
+  color: white;
 }
 
 /***************************/
@@ -54,32 +55,23 @@ background-size: cover;
   width: 20em;
   height: auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin: 1em auto 1em auto;
 }
 
 #aanmelden fieldset{
   border: none;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin: 1em auto 1em auto;
 }
 
 #aanmelden form{
   width: 25em;
   text-align: left;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   background-color: white;
   border: 1px solid white;
   border-radius: 20px;
-  padding: 0em 2em 2em 2em;
+  padding: 0em 2em 2.3em 2em;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
-}
-
-#aanmelden a{
-  text-decoration: none;
 }
 
 #aanmelden legend{
@@ -101,46 +93,21 @@ background-size: cover;
 }
 
 #aanmelden label:nth-of-type(2), #aanmelden label:nth-of-type(3){
-  margin-top: 0.2em;
-  margin-bottom: 0.3em;
+  margin: 0.2em auto 0.3em auto;
 }
 
 #aanmelden input{
-  margin-top: 0em;
-  margin-bottom: 0.5em;
-  max-width: 18em;
+  margin: 0em auto 0.5em auto;
   width: 100%;
   font-size: 1.3em;
   font-weight: normal;
   border-radius: 10px;
   border-color: #EB5014;
   border-width: 1px;
-  padding: 0.5em 0.0em 0.5em 0.5em;
+  padding: 0.5em 0em 0.5em 0.5em;
 }
 
-#aanmelden button{
-  display: block;
-  padding: 1em 2em 1em 2em;
-  border-radius: 40px;
-  margin-top: 1em;
-  max-width: 18em;
-  width: 100%;
-  font-size: 1.3em;
-  border-color: #EB5014;
-  box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
-  background-color: #EB5014;
-  color: white;
-}
-
-#aanmelden button:disabled{
-  background-color: lightgrey;
-  border-color: grey;
-  color: grey;
-  box-shadow: -1px 6px 14px rgba(0,0,0,0);
-  opacity: 0.4;
-}
-
-#aanmelden p.vanAanmeldenTotInloggen{
+#aanmelden #vanAanmeldenTotInloggen{
   font-size: 1em;
   font-weight: 300;
   color: grey;
@@ -154,6 +121,7 @@ background-size: cover;
   text-align: left;
   margin-left: 0em;
   font-size: 0.8em;
+  color: grey;
 }
 
 #aanmelden form input:valid{
@@ -168,7 +136,7 @@ background-size: cover;
   text-decoration: underline;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 50em) { /* Zodat alles links blijft */
 
   #aanmelden p{
     margin-left: 6.5em;
@@ -178,7 +146,7 @@ background-size: cover;
     margin-left: 6em;
   }
 
-  #aanmelden p.vanAanmeldenTotInloggen{
+  #aanmelden #vanAanmeldenTotInloggen{
     max-width: 18em;
     margin-right: 0em;
   }
@@ -190,29 +158,8 @@ background-size: cover;
 /******************************/
 /******************************/
 
-#voornaam nav{
-  display: flex;
-  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
-  padding: 0.5em;
-  background-color: white;
-}
-
-#voornaam .logo{
-  display: none;
-}
-
-#voornaam nav h1{
-  color: grey;
-  font-weight: normal;
-  position: relative;
-  left: 40%;
-  transform: translateX(-60%);
-  top: 0.5em;
-}
-
 #voornaam form input{
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  margin: 1em auto 0.5em auto;
   width: 100%;
   font-size: 0.8em;
   border-radius: 10px;
@@ -230,16 +177,13 @@ background-size: cover;
 }
 
 #voornaam form{
+  margin: 1em auto 1.5em auto;
   width: 25em;
   text-align: left;
-  margin-left: auto;
-  margin-right: auto;
   background-color: white;
-  margin-top: 1em;
   border: 1px solid white;
   border-radius: 20px;
-  padding: 4em 2em 16.3em 2em;
-  margin-bottom: 1.5em;
+  padding: 4em 2em 14em 2em;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
 
@@ -249,33 +193,10 @@ background-size: cover;
 }
 
 #voornaam form p{
+  margin: 1em auto 1em auto;
   max-width: 30em;
   font-size: 0.8em;
-  margin-left: auto;
-  margin-right: auto;
   font-weight: 300;
-  color: grey;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
-#voornaam form button{
-  display: block;
-  padding: 1em 2em 1em 2em;
-  border-radius: 40px;
-  margin-top: 1em;
-  max-width: 18em;
-  width: 100%;
-  font-size: 1.3em;
-  border-color: #EB5014;
-  box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
-  background-color: #EB5014;
-  color: white;
-}
-
-#voornaam form button:disabled{
-  background-color: white;
-  border-color: grey;
   color: grey;
 }
 
@@ -292,31 +213,35 @@ background-size: cover;
     top: 4.5em !important;
     color: lightgrey !important;
   }
+
   header nav{
     box-shadow: -1px 1px 14px rgba(0,0,0,0) !important;
     background-color: transparent !important;
   }
 
+  #voornaam button{
+    margin-bottom: -2em;
+  }
+
+  #voornaam form{
+    margin-bottom: 5em !important;
+  }
+
   form{
+    margin: 1em auto auto 3em !important;
     width: 25em !important;
     border: 1px solid grey;
     border-radius: 20px;
     border-color: lightgrey;
     background-color: white;
-    margin-left: 3em !important;
-    margin-top: 1em !important;
   }
 
-  #voornaam .logo{
+  .logo{
+    margin: 1em auto -4.3em 6em;
     display: inherit;
     width: 20em;
     height: auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
-    margin-bottom: -4.3em;
-    margin-left: 6em;
   }
 
   #voornaam form, #fotostoevoegen form, #geboortedatum form, #manvrouw form, #mijnprofiel form, #provincie form, #tekst_profiel form{
@@ -331,29 +256,8 @@ background-size: cover;
 /*******************************/
 /*******************************/
 
-#geboortedatum nav{
-  display: flex;
-  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
-  padding: 0.5em;
-  background-color: white;
-}
-
-#geboortedatum .logo{
-  display: none;
-}
-
-#geboortedatum nav h1{
-  color: grey;
-  font-weight: normal;
-  position: relative;
-  left: 40%;
-  transform: translateX(-60%);
-  top: 0.5em;
-}
-
 #geboortedatum form input{
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  margin: 1em auto 0.5em auto;
   width: 100%;
   font-size: 1.3em;
   font-weight: normal;
@@ -372,16 +276,13 @@ background-size: cover;
 }
 
 #geboortedatum form{
+  margin: 1em auto 1.5em auto;
   width: 25em;
   text-align: left;
-  margin-left: auto;
-  margin-right: auto;
   background-color: white;
-  margin-top: 1em;
   border: 1px solid white;
   border-radius: 20px;
   padding: 4em 2em 17.5em 2em;
-  margin-bottom: 1.5em;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
 
@@ -391,52 +292,11 @@ background-size: cover;
 }
 
 #geboortedatum form p{
+  margin: 1em auto 1em auto;
   max-width: 30em;
   font-size: 0.8em;
-  margin-left: auto;
-  margin-right: auto;
   font-weight: 300;
   color: grey;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
-#geboortedatum form button{
-  display: block;
-  padding: 1em 2em 1em 2em;
-  border-radius: 40px;
-  margin-top: 1em;
-  max-width: 18em;
-  width: 100%;
-  font-size: 1.3em;
-  border-color: #EB5014;
-  box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
-  background-color: #EB5014;
-  color: white;
-}
-
-#geboortedatum form button:disabled{
-  background-color: white;
-  border-color: grey;
-  color: grey;
-}
-
-@media (min-width: 50em) {
-  #geboortedatum form{
-    padding: 7em 2em 14em 2em !important;
-    margin-bottom: 1.2em;
-  }
-  #geboortedatum .logo{
-    display: inherit;
-    width: 20em;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
-    margin-bottom: -4.3em;
-    margin-left: 6em;
-  }
 }
 
 /*******************************/
@@ -445,37 +305,14 @@ background-size: cover;
 /*******************************/
 /*******************************/
 
-#provincie nav{
-  display: flex;
-  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
-  padding: 0.5em;
-  background-color: white;
-}
-
-#provincie .logo{
-  display: none;
-}
-
-#provincie nav h1{
-  color: grey;
-  font-weight: normal;
-  position: relative;
-  left: 40%;
-  transform: translateX(-60%);
-  top: 0.5em;
-}
-
 #provincie form{
+  margin: 1em auto 1.5em auto;
   width: 25em;
   text-align: left;
-  margin-left: auto;
-  margin-right: auto;
   background-color: white;
-  margin-top: 1em;
   border: 1px solid white;
   border-radius: 20px;
   padding: 4em 2em 16.6em 2em;
-  margin-bottom: 1.5em;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
 
@@ -485,8 +322,7 @@ background-size: cover;
 }
 
 #provincie form select{
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  margin: 1em auto 0.5em auto;
   width: 100%;
   height: 2.5em;
   font-size: 1.3em;
@@ -505,48 +341,11 @@ background-size: cover;
 }
 
 #provincie form p{
+  margin: 1em auto 1em auto;
   max-width: 30em;
   font-size: 0.8em;
-  margin-left: auto;
-  margin-right: auto;
   font-weight: 300;
   color: grey;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
-#provincie form button{
-  display: block;
-  padding: 1em 2em 1em 2em;
-  border-radius: 40px;
-  margin-top: 1em;
-  max-width: 18em;
-  width: 100%;
-  font-size: 1.3em;
-  border-color: #EB5014;
-  box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
-  background-color: #EB5014;
-  color: white;
-}
-
-#provincie form button:disabled{
-  background-color: white;
-  border-color: grey;
-  color: grey;
-}
-
-@media (min-width: 50em) {
-  #provincie .logo{
-    display: inherit;
-    width: 20em;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
-    margin-bottom: -4.3em;
-    margin-left: 6em;
-  }
 }
 
 /********************************/
@@ -555,37 +354,14 @@ background-size: cover;
 /********************************/
 /********************************/
 
-#manvrouw nav{
-  display: flex;
-  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
-  padding: 0.5em;
-  background-color: white;
-}
-
-#manvrouw .logo{
-  display: none;
-}
-
-#manvrouw nav h1{
-  color: grey;
-  font-weight: normal;
-  position: relative;
-  left: 40%;
-  transform: translateX(-60%);
-  top: 0.5em;
-}
-
 #manvrouw form{
+  margin: 1em auto 1.5em auto;
   width: 25em;
   text-align: left;
-  margin-left: auto;
-  margin-right: auto;
   background-color: white;
-  margin-top: 1em;
   border: 1px solid white;
   border-radius: 20px;
   padding: 0em 2em 15.5em 2em;
-  margin-bottom: 1.5em;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
 
@@ -594,10 +370,9 @@ background-size: cover;
 }
 
 #manvrouw label{
+  margin: -1em auto 0.6em auto;
   font-size: 1.8em;
   font-weight: bold;
-  margin-top: -1em;
-  margin-bottom: 0.6em;
 }
 
 #manvrouw legend{
@@ -617,32 +392,12 @@ background-size: cover;
   text-align: left;
 }
 
-#manvrouw form button{
-  display: block;
-  padding: 1em 2em 1em 2em;
-  border-radius: 40px;
-  margin-top: 1em;
-  max-width: 18em;
-  width: 100%;
-  font-size: 1.3em;
-  border-color: #EB5014;
-  box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
-  background-color: #EB5014;
-  color: white;
-}
-
-#manvrouw form button:disabled{
-  background-color: white;
-  border-color: grey;
-  color: grey;
-}
-
-#manvrouw input[type=radio]{
+#manvrouw input[type=radio]{ /* Radio buttons verdwijnen*/
   padding: 20px;
   display: none;
 }
 
-#manvrouw input[type=radio]:checked + label{
+#manvrouw input[type=radio]:checked + label{ /* Indien gecheckt*/
   background-color: #EB5014;
   color: white;
 }
@@ -652,6 +407,7 @@ background-size: cover;
 }
 
 #manvrouw label[for=man]{
+  margin: -1.9em auto 0.5em; 0.2em;
   padding: 1em;
   width: 5em;
   border: 1px solid black;
@@ -659,8 +415,6 @@ background-size: cover;
   border-radius: 10px;
   border: 2px solid #EB5014;
   font-weight: normal;
-  margin-top: -1.9em;
-  margin-left: 0.2em;
 }
 
 #manvrouw label[for=vrouw]{
@@ -674,22 +428,11 @@ background-size: cover;
   font-weight: normal;
 }
 
-#manvrouw label{
+#manvrouw label{ /* tekst in vierkanten */
   text-align: center;
 }
 
 @media (min-width: 50em) {
-  #manvrouw .logo{
-    display: inherit;
-    width: 20em;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
-    margin-bottom: -4.3em;
-    margin-left: 6em;
-  }
   #manvrouw form{
     padding: 2.3em 2em 12.5em 2em !important;
     margin-bottom: 1.45em;
@@ -702,37 +445,14 @@ background-size: cover;
 /******************************/
 /******************************/
 
-#fotostoevoegen nav{
-  display: flex;
-  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
-  padding: 0.5em;
-  background-color: white;
-}
-
-#fotostoevoegen .logo{
-  display: none;
-}
-
-#fotostoevoegen nav h1{
-  color: grey;
-  font-weight: normal;
-  position: relative;
-  left: 40%;
-  transform: translateX(-60%);
-  top: 0.5em;
-}
-
 #fotostoevoegen form{
+  margin: 1em auto 1.5em auto;
   width: 25em;
   text-align: left;
-  margin-left: auto;
-  margin-right: auto;
   background-color: white;
-  margin-top: 1em;
   border: 1px solid white;
   border-radius: 20px;
   padding: 1.5em 2em 3.55em 2em;
-  margin-bottom: 1.5em;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
 
@@ -742,17 +462,15 @@ background-size: cover;
 }
 
 #fotostoevoegen p{
+  margin: 1em auto auto auto;
   font-size: 0.8em;
   font-weight: 300;
   color: grey;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5%;
   text-align: left;
 }
 
-#fotostoevoegen form input[type=file]{
+#fotostoevoegen form input[type=file]{ /* Ruimte om te button heen */
   width: 95%;
   border-radius: 10px;
   border-color: #EB5014;
@@ -767,46 +485,11 @@ background-size: cover;
   margin-top: 2em;
 }
 
-#fotostoevoegen form button{
-  display: block;
-  padding: 1em 2em 1em 2em;
-  border-radius: 40px;
-  margin-top: 1em;
-  max-width: 18em;
-  width: 100%;
-  font-size: 1.3em;
-  border-color: #EB5014;
-  box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
-  background-color: #EB5014;
-  color: white;
-}
-
-#fotostoevoegen form button:disabled{
-  background-color: white;
-  border-color: grey;
-  color: grey;
-}
-
 @media (min-width: 50em) {
-  #fotostoevoegen .logo{
-    display: inherit;
-    width: 20em;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
-    margin-bottom: -4.3em;
-    margin-left: 6em;
-  }
 
   #fotostoevoegen form{
     padding: 4.4em 2em 0.5em 2em !important;
     margin-bottom: 0.9em;
-  }
-
-  #fotostoevoegen form label{
-    margin-top: -1em;
   }
 }
 
@@ -816,37 +499,14 @@ background-size: cover;
 /*******************************/
 /*******************************/
 
-#tekst_profiel nav{
-  display: flex;
-  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
-  padding: 0.5em;
-  background-color: white;
-}
-
-#tekst_profiel .logo{
-  display: none;
-}
-
-#tekst_profiel nav h1{
-  color: grey;
-  font-weight: normal;
-  position: relative;
-  left: 40%;
-  transform: translateX(-60%);
-  top: 0.5em;
-}
-
 #tekst_profiel form{
+  margin: 1em auto 1.5em auto;
   width: 25em;
   text-align: left;
-  margin-left: auto;
-  margin-right: auto;
   background-color: white;
-  margin-top: 1em;
   border: 1px solid white;
   border-radius: 20px;
   padding: 4em 2em 11.65em 2em;
-  margin-bottom: 1.5em;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
 
@@ -856,58 +516,22 @@ background-size: cover;
 }
 
 #tekst_profiel textarea{
+  margin: 1em auto auto auto;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1em;
   font-size: 0.8em;
   height: 5em;
   padding: 0.2em 0.3em 0em 0.2em;
 }
 
 #tekst_profiel form p{
+  margin: 1em auto 1em auto;
   max-width: 30em;
   font-size: 0.8em;
-  margin-left: auto;
-  margin-right: auto;
   font-weight: 300;
-  color: grey;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
-#tekst_profiel form button{
-  display: block;
-  padding: 1em 2em 1em 2em;
-  border-radius: 40px;
-  margin-top: 1em;
-  max-width: 18em;
-  width: 100%;
-  font-size: 1.3em;
-  border-color: #EB5014;
-  box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
-  background-color: #EB5014;
-  color: white;
-}
-
-#tekst_profiel form button:disabled{
-  background-color: white;
-  border-color: grey;
   color: grey;
 }
 
 @media (min-width: 50em) {
-  #tekst_profiel .logo{
-    display: inherit;
-    width: 20em;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
-    margin-bottom: -4.3em;
-    margin-left: 6em;
-  }
   #tekst_profiel form{
     padding: 7em 2em 7.4em 2em !important;
     margin-bottom: 2em;
@@ -920,38 +544,19 @@ background-size: cover;
 /******************************/
 /******************************/
 
-#mijnprofiel nav{
-  display: flex;
-  box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
-  padding: 0.5em;
-  background-color: white;
-}
-
-#mijnprofiel .logo{
-  display: none;
-}
-
 #mijnprofiel #profielfoto{
+  margin: 1em auto 1em auto;
   width: 20em;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1em;
-  margin-bottom: 1em;
   border-radius: 5px;
 }
 
-#mijnprofiel .profielBackground{
+#mijnprofiel .profielBackground{ /* Witte achtergrond */
+  margin: 1em auto 1.6em auto;
   background-color: white;
   width: 25em;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   border: 1px solid white;
   border-radius: 20px;
-  margin-top: 1em;
-  margin-bottom: 1.6em;
-  display: block;
   padding: 1em 0em 4em 0em;
   box-shadow: -1px 1px 14px rgba(0,0,0,0.3);
 }
@@ -966,8 +571,7 @@ background-size: cover;
 }
 
 #mijnprofiel h2{
-  margin-top: 0.5em;
-  margin-left: 1.5em;
+  margin: 0.5em auto auto 1.5em;
 }
 
 #mijnprofiel h2 span{
@@ -975,14 +579,14 @@ background-size: cover;
   font-size: 0.6em;
 }
 
-#mijnprofiel .profielBackground img:first-of-type{
+#mijnprofiel .profielBackground img:first-of-type{ /* Locatie icon */
   height: 1.7em;
   width: -2em;
   margin: 0.5em 0em -0.5em 0.5em;
   padding-left: 1.5em;
 }
 
-#mijnprofiel .profielBackground p:first-of-type{
+#mijnprofiel .profielBackground p:first-of-type{ /* Locatie tekst */
   font-size: 0.9em;
   margin-top: -2em;
   color: black;
@@ -990,53 +594,23 @@ background-size: cover;
 }
 
 #mijnprofiel .profielBackground p:last-of-type{
-  margin-left: 1em;
-  margin-right: 1em;
+  margin: auto 1em auto 1em;
   font-family: 'Amatic SC', cursive;
   font-size: 2em;
 }
 
-#mijnprofiel button{
-  display: block;
-  padding: 1em 2em 1em 2em;
-  border-radius: 40px;
-  margin-top: 1em;
-  max-width: 18em;
-  width: 100%;
-  font-size: 1.3em;
-  border-color: #EB5014;
-  box-shadow: -1px 6px 14px rgba(0,0,0,0.3);
-  background-color: #EB5014;
-  color: white;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 @media (min-width: 50em) {
-  #mijnprofiel .logo{
-    display: inherit;
-    width: 20em;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
-    margin-bottom: -4.3em;
-    margin-left: 6em;
-  }
-
   #mijnprofiel .mijnProfielNaarLinks{
     width: 25em !important;
-    margin-left: 3em !important;
-    margin-top: 1em !important;
+    margin: 1em auto auto 3em !important;
     padding-bottom: 0em !important;
   }
+
   #mijnprofiel h2{
-    margin-top: 2.5em;
-    margin-left: 1.5em;
+    margin: 2.5em auto auto 1.5em;
   }
 
-  #mijnprofiel .profielBackground{
+  #mijnprofiel .profielBackground{ /* Witte achtergrond */
     margin-bottom: 1.2em;
     padding-bottom: 0.5em;
   }

@@ -5,7 +5,7 @@ const upload = multer({dest: 'static/upload/' }); // Geeft aan waar de files hee
 require('dotenv').config();                       // .env bestand voor secret data van MongoDB
 const session = require('express-session');       // express.session, als gebruiker browser afsluit en weer terugkomt, zijn de ingevulde gegevens er nog
 const MongoClient = require('mongodb').MongoClient, // mongo database
-	ObjectID = require('mongodb').ObjectID; 			// mongo database
+	ObjectID = require('mongodb').ObjectID; 				// pakt de _id uit mongodb
 const app = express();                            // express
 const port = 3000;                                // de poort waar de server mee verbindt
 
