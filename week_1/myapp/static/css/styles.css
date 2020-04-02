@@ -6,9 +6,10 @@
 }
 
 body{
-background-image: url("/static/images/couple.jpg");
+background-image: url("../images/cody-black-VDb0wxbfG6k-unsplash.jpg");
 background-repeat: no-repeat;
 background-size: cover;
+min-height: 100vh;
 }
 
 .logo{

@@ -105,7 +105,7 @@ function findID(req, res) {
 /************************/
 
 
-app.post('/sendFormAanmelden', addUser);          // sendFormAanmelden komt overeen met action in form
+app.post('/sendFormSignup', addUser);          // sendFormAanmelden komt overeen met action in form
 
 function addUser(req, res){                     	// request, response
 	req.session.user = {                          	// pushed onderstaande ingevulde data in req.session.user, zonder session, is het altijd geldig
@@ -118,7 +118,7 @@ function addUser(req, res){                     	// request, response
 }
 
 
-app.post('/sendFormVoornaam', addFirstName);      // sendFormVoornaam komt overeen met action in form
+app.post('/sendFormFirstName', addFirstName);     // sendFormVoornaam komt overeen met action in form
 
 function addFirstName(req, res){                	// request, response
 	req.session.user.firstName = req.body.firstName; // je slaat firstName op in de req.session.user
@@ -127,7 +127,7 @@ function addFirstName(req, res){                	// request, response
 }
 
 
-app.post('/sendFormGeboortedatum', addDateOfBirth);	// sendFormGeboortedatum komt overeen met action in form
+app.post('/sendFormDateOfBirth', addDateOfBirth);	// sendFormGeboortedatum komt overeen met action in form
 
 function addDateOfBirth(req, res){              	// request, response
 	req.session.user.dateOfBirth = req.body.dateOfBirth; // je slaat dateOfBirth op in de req.session.user
@@ -136,7 +136,7 @@ function addDateOfBirth(req, res){              	// request, response
 }
 
 
-app.post('/sendFormProvincie', addProvince);    	// sendFormProvincie komt overeen met action in form
+app.post('/sendFormProvince', addProvince);    	// sendFormProvincie komt overeen met action in form
 
 function addProvince(req, res){                 	// request, response
 	req.session.user.province = req.body.province;	// je slaat province op in de req.session.user
@@ -145,7 +145,7 @@ function addProvince(req, res){                 	// request, response
 }
 
 
-app.post('/sendFormGeslacht', addGender);       	// sendFormGeslacht komt overeen met action in form
+app.post('/sendFormGender', addGender);       	// sendFormGeslacht komt overeen met action in form
 
 function addGender(req, res){                   	// request, response
 	req.session.user.gender = req.body.gender;    	// je slaat gender op in de req.session.user
@@ -154,7 +154,7 @@ function addGender(req, res){                   	// request, response
 }
 
 
-app.post('/sendFormAfbeeldingen', upload.single('pictures'), addPictures); // sendFormAfbeeldingen komt overeen met action in form, het accepteert maar 1 image
+app.post('/sendFormProfilePic', upload.single('pictures'), addPictures); // sendFormAfbeeldingen komt overeen met action in form, het accepteert maar 1 image
 
 function addPictures(req, res){                 	// request, response
 	req.session.user.profilePic = req.file;       	// je slaat profilePic op in de req.session.user
@@ -163,7 +163,7 @@ function addPictures(req, res){                 	// request, response
 }
 
 
-app.post('/sendFormTekst', addText);            	// sendFormTekst komt overeen met action in form
+app.post('/sendFormText', addText);            	// sendFormTekst komt overeen met action in form
 
 function addText(req, res){                     	// request, response
 
