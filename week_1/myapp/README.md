@@ -44,18 +44,19 @@ De web app is responsive gemaakt, hieronder ziet u enkel de structuur en lay-out
 
 1.
 ```
-const express = require('express');
-const bodyParser = require('body-parser');
-const multer = require('multer');
-const upload = multer({dest: 'static/upload/' });
-const mongo = require('mongodb'); 
-require('dotenv').config();
-const session = require('express-session');
-const app = express();
-const port = 3000;
+const express = require('express');              
+const bodyParser = require('body-parser');       
+const multer = require('multer');                
+const upload = multer({dest: 'static/upload/' }); 
+require('dotenv').config();                       
+const session = require('express-session');      
+const MongoClient = require('mongodb').MongoClient, 
+	ObjectID = require('mongodb').ObjectID; 				
+const app = express();                            
+const port = 5000;   
 ```
 
-Met deze variabelen geef je aan dat je deze NPM packages wil gebruiken en op welke poort je zit, namelijk de 3000 poort.
+Met deze variabelen geef je aan dat je deze NPM packages wil gebruiken en op welke poort je zit, namelijk de 5000 poort.
 
 2.
 ```
@@ -90,57 +91,80 @@ Hiermee registreer je de npm packages die hierboven zijn geplaats en geef je een
 
 4.
 ```
-app.get('/', function(req, res){
-  res.redirect('/aanmelden');
+app.get('/', function(req, res){                 
+	res.redirect('/aanmelden');
+});
+
+
+app.get('/aanmelden', function(req, res){  
+	res.render('signup.ejs');
 })
 
-//GET to request data from a document
-app.get('/aanmelden', function(req, res){
-  res.render('aanmelden.ejs');
-})
 
-//GET, to request data from a document
 app.get('/voornaam/:id', function(req, res){
-  res.render('voornaam.ejs', req.session.user);
+	res.render('firstname.ejs', req.session.user); 
 })
 
-//GET, to request data from a document
+
 app.get('/geboortedatum/:id', function(req, res){
-  res.render('geboortedatum.ejs', req.session.user);
+	res.render('datofbirth.ejs', req.session.user); 
 })
 
-//GET, to request data from a document
+
 app.get('/provincie/:id', function(req, res){
-  res.render('provincie.ejs', req.session.user);
+	res.render('province.ejs', req.session.user);
 })
 
-//GET, to request data from a document
+
 app.get('/geslacht/:id', function(req, res){
-  res.render('man_vrouw.ejs', req.session.user);
+	res.render('gender.ejs', req.session.user); 
 })
 
-//GET, to request data from a document
+
 app.get('/afbeeldingen/:id', function(req, res){
-  res.render('foto_toevoegen.ejs', req.session.user);
+	res.render('profilepic.ejs', req.session.user);
 })
 
-//GET, to request data from a document
+
 app.get('/tekst/:id', function(req, res){
-  res.render('tekst_profiel.ejs', req.session.user);
+	res.render('text.ejs', req.session.user); 	
 })
 
-//GET, to request data from a document
+
 app.get('/profiel/:id', function(req, res){
-  res.render('mijn_profiel.ejs', req.session.user);
-})
+	db.collection('user').findOne(									
+		{_id: ObjectID(req.params.id)},								
+		function (err, result) {											
+			if (err) throw err; 										
+			console.log('result:', result);							
+			res.render('profile.ejs', result); 					
+		}
+	);
+});
+
+
+app.get('/bewerken/:id', findID);
+
+function findID(req, res) {
+	db.collection('user').findOne(									
+		{_id: ObjectID(req.params.id)},						
+		function (err, result) {											
+			if (err) throw err; 											
+			console.log('result:', result);				
+			res.render('update.ejs', result);					
+		}
+	);
+}
 ```
 
-App.get zorgt ervoor dat de server data stuurt naar de client. In dit geval, het ejs bestand en die je opgeeft door res.render. Deze file wordt doorgestuurd naar de client, en mocht je in de ejs file refereren naar informatie uit de req.session.user (de ingevulde gegevens van de gebruiker komt hierin te staan), dan kan je een html tag veranderen met de ingevulde data door de gebruiker. Dan komt er bijvoorbeeld bij voornaam te staan: ```<label> Hi <%= id %>, wat is je echte voornaam?</label>```, waardoor de eerste echte id, in mijn geval de userName, bij de client wordt weergegeven.
+App.get zorgt ervoor dat de server data stuurt naar de client. In dit geval, het ejs bestand die je opgeeft door res.render. Deze file wordt doorgestuurd naar de client, en mocht je in de ejs file refereren naar informatie uit de req.session.user (de ingevulde gegevens van de gebruiker komt hierin te staan), dan kan je een html tag veranderen met de ingevulde data door de gebruiker. Dan komt er bijvoorbeeld bij voornaam te staan: ```<label> Hi <%= id %>, wat is je echte voornaam?</label>```, waardoor de eerste echte id, in mijn geval de userName, bij de client wordt weergegeven.
+
+In de laatste twee app.get, gebruik ik een findOne method. Dit is een method vanuit de database MongoDB. Met deze findOne method ben ik opzoek gegaan naar 1 specifieke gebruiker, namelijk, de huidige gebruiker die bezig is met registreren. Hij zoekt in de collection 'user' en is opzoek naar een _ id. Dit is een _ id die MongoDB automatisch genereert bij elke geregistreerde gebruiker. Hij is opzoek naar de specifieke _ id in de database, van de gebruiker die aan het registreren is en hier komt hij aan doordat ik een id telkens meegeef in de url balk en NodeJS deze eruit haalt door req.params.id te gebruiken. Het resultaat van de findOne komt in de result te zitten. Dit is een callback functie.
 
 5.
 
 ```
-app.post('/aanmelden', addUser)
+app.post('/sendFormAanmelden', addUser)
 
 function addUser(req, res){ 
   req.session.user = {
@@ -163,7 +187,7 @@ De res.redirect zorgt ervoor dat wanneer de gevraagde gegevens ingevuld zijn, je
 
 
 ```
-app.post('/voornaam', addFirstName)
+app.post('/sendFormVoornaam', addFirstName)
 
 function addFirstName(req, res){
   req.session.user.firstName = req.body.firstName;
@@ -172,7 +196,7 @@ function addFirstName(req, res){
 }
 
 
-app.post('/geboortedatum', addDateOfBirth)
+app.post('/sendFormDateOfBirth', addDateOfBirth)
 
 function addDateOfBirth(req, res){ 
   req.session.user.dateOfBirth = req.body.dateOfBirth;
@@ -181,7 +205,7 @@ function addDateOfBirth(req, res){
 }
 
 
-app.post('/provincie', addProvince)
+app.post('/sendFormProvince', addProvince)
 
 function addProvince(req, res){ 
   req.session.user.province = req.body.province;
@@ -190,7 +214,7 @@ function addProvince(req, res){
 }
 
 
-app.post('/geslacht', addGender)
+app.post('/sendFormGender', addGender)
 
 function addGender(req, res){ 
   req.session.user.gender = req.body.gender;
@@ -199,7 +223,7 @@ function addGender(req, res){
 }
 
 
-app.post('/afbeeldingen', upload.single('pictures'), addPictures)
+app.post('/sendFormProfilePic', upload.single('pictures'), addPictures)
 
 function addPictures(req, res){ 
   req.session.user.profilePic = req.file;
@@ -208,21 +232,44 @@ function addPictures(req, res){
 }
 
 
-app.post('/tekst', addText)
+app.post('/sendFormText', addText)
 
 function addText(req, res){
 
   req.session.user.textProfile = req.body.textProfile;
 
-  db.collection('user').insertOne(req.session.user);
-  console.log(req.session.user);
-  res.redirect('profiel/' + req.body.id);
+	db.collection('user').insertOne(req.session.user, callback); 
+	function callback (err, result) {	
+  		if (err) throw err;		
+      console.log('test:', result);
+      req.session.user._id = result.insertedId;	
+      res.redirect('profiel/' + req.session.user._id);
+  }
 }
 ```
 
-De `db.collection('user').insertOne(req.session.user);` code regel, zorgt ervoor dat alles wat in de 'req.session.user' is gestopt, bij elke app.post functie, dat al deze ingevulde gegevens in een keer in de mongoDB database komt te staan. Dit komt door de method 'insertOne'. MongoDB maakt overigens ook zelf automatisch een id aan, dus in principe kan je je eigen id ook weglaten. Ik heb het erin gelaten, omdat ik in mijn EJS bestanden ook refereer naar deze id. Ik heb er dus voor gekozen dat wanneer alle gegevens ingevuld zijn van de gebruiker, dat het dan pas door wordt gestuurd naar de database.
+De `db.collection('user').insertOne(req.session.user);` code regel, zorgt ervoor dat alles wat in de 'req.session.user' is gestopt, bij elke app.post functie, dat al deze ingevulde gegevens in een keer in de mongoDB database komt te staan. Dit komt door de method 'insertOne'. Ik heb er dus voor gekozen dat wanneer alle gegevens ingevuld zijn van de gebruiker, dat het dan pas door wordt gestuurd naar de database. Het resultaat komt in result te staan. Daarna zorg ik ervoor dat de id, van de huidige gebruiker, waarvan de data net is opgestuurd naar de database, ook in de req.session.user komt te staan. Hierin voeg je dus de _ id toe. Deze _ id ziet de gebruiker dan ook terug in de url.
 
 6.
+
+```
+app.post('/sendUpdate', updateText); 
+
+function updateText(req, res){
+	db.collection('user').updateOne(
+    {_id: ObjectID(req.body._id)},	
+    { $set: {textProfile: req.body.updateTextProfile} },
+   	(err)=>{		
+  	if (err) throw err;	
+ 		res.redirect('profiel/' + req.body._id);
+    });
+}
+```
+
+Net zoals de method findOne, heb je ook een method die heet updateOne. Hiermee kan je data die in de database staan bewerken. Eerst ga je weer opzoek naar de juiste _ id in de database, namelijk van de huidige gebruiker die bezig is met registreren. Bij een app.get komt dit in je req.params te staan en in een app.post in je req.body. Doormiddel van $set geef je aan dat je data wil veranderen. Dus in dit geval wil ik de textprofile veranderen, door wat er in de updateTextProfile ingevuld wordt door de gebruiker. Dit komt in de req.body.updateTextProfile te staan. Hierdoor wordt de textProfile dus bewerkt in de database. Mocht dit niet lukken, dan geeft het een error door de callback, mocht het wel lukken, dan wordt het aangepast in de database en wordt je geredirect naar de profiel pagina, met in de url de _ id van de MongoDB database.
+
+
+7.
 
 ```
 app.listen(port,  () => console.log(`Running my NodeJS server`))
@@ -273,6 +320,8 @@ _Voorbeeld (zie de <%= .. %> tags, hier komt de ingevulde input, d.m.v. het 'nam
 7. Meerdere app.get en app.post aangemaakt met elke app.post een nieuwe functie. In deze functie zorg ik ervoor dat de ingevulde gegevens onder deze specifieke id/gebruiker komt te staan en verzonden wordt naar de MongoDB database. Daarnaast zorg ik ervoor dat de gegevens per functie in een Express session komt te staan. Dit zorgt ervoor dat als de gebruiker de browser weg drukt en weer terug komt op de browser, de ingevulde gegevens niet verloren gaan en de gebruiker weer verder kan gaan waar hij/zij gebleven is. Door middel van de res.redirect wordt de gebruiker doorverwezen naar een nieuw EJS bestand en wordt de al ingevulde gegevens meeverstuurd. Bij de laatste redirect worden de ingevulde gegevens pas doorgestuurd naar de mongoDB database.
 
 8. De ingevulde gegevens verstuur ik door middel van de EJS templating/JavaScript in de EJS files door naar de uiteindelijke eind pagina, namelijk de 'mijn_profiel.ejs' pagina. Hier vindt de gebruiker alle ingevulde gegevens in 1 overzicht terug.
+
+9. Daarna heb ik mij verdiept in de updateOne en de findOne method van MongoDB. Ik heb een extra .ejs file aangemaakt, een bewerk pagina, waarin je te textProfile kan aanpassen en het werkt.
 
 9. De puntjes op de i gezet en de laatste comments in het bestand gezet. Kijk hiervoor naar de index.js file.
 
